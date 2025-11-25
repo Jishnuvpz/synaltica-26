@@ -11,7 +11,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [openRound, setOpenRound] = useState<number | null>(0);
   
-  const tabs = ['Overview', 'Rules', 'Team Size'];
+  const tabs = ['Overview', 'Rules'];
 
   const handleToggleRound = (index: number) => {
     setOpenRound(openRound === index ? null : index);
@@ -36,8 +36,26 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
             <event.Icon className="w-12 h-12 text-brand-amber" />
           </div>
           <div>
-            <h2 className="font-heading text-4xl font-bold text-white">{event.name}</h2>
-            <p className="text-brand-amber-dark italic">{event.tagline}</p>
+            <div className="flex items-center gap-4">
+              <div>
+                <h2 className="font-heading text-4xl font-bold text-white">{event.name}</h2>
+                <p className="text-brand-amber-dark italic">{event.tagline}</p>
+              </div>
+              {/* Team-size badge (integrated, subtle, keeps UI compact) */}
+              <div className="ml-auto hidden md:flex items-center gap-2">
+                <span className="text-xs uppercase text-white/70 tracking-widest">Team</span>
+                <div className="px-3 py-1 rounded-full bg-gradient-to-tr from-white/5 to-white/3 border border-white/10 text-white/90 font-semibold text-sm">
+                  {event.teamSize}
+                </div>
+              </div>
+            </div>
+            {/* Mobile-friendly team-size line */}
+            <div className="mt-3 md:hidden flex items-center gap-2">
+              <span className="text-xs uppercase text-white/70 tracking-widest">Team</span>
+              <div className="px-3 py-1 rounded-full bg-gradient-to-tr from-white/5 to-white/3 border border-white/10 text-white/90 font-semibold text-sm">
+                {event.teamSize}
+              </div>
+            </div>
           </div>
         </header>
 
@@ -83,14 +101,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
               </div>
             )}
             
-            {activeTab === 'Team Size' && (
-              <div className="animate-[fadeInUp_0.5s_ease-out]">
-                <div className="animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
-                  <h3 className="font-heading text-2xl text-brand-amber-dark mb-2">Team Size</h3>
-                  <p className="text-2xl font-bold text-white">{event.teamSize}</p>
-                </div>
-              </div>
-            )}
+            {/* Team size now displayed in the header badge — removed dedicated Team Size tab for a cleaner layout */}
           </div>
         </div>
 
