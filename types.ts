@@ -1,0 +1,25 @@
+// Fix: Import React type to resolve 'Cannot find namespace React'.
+import type React from 'react';
+
+export interface Round {
+  title: string;
+  description: string;
+  rules: string[];
+}
+
+export interface Convenor {
+  name: string;
+  phone: string;
+}
+
+export interface Event {
+  id: string;
+  name: string;
+  tagline: string;
+  teamSize: string;
+  prizePool: string;
+  overview: string;
+  rounds: Round[];
+  convenors: Convenor[];
+  Icon: React.FC<{ className?: string }>;
+}
