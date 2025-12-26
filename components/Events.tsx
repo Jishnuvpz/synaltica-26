@@ -10,7 +10,7 @@ interface EventsProps {
 
 const Events: React.FC<EventsProps> = ({ events, onSelectEvent }) => {
   return (
-    <section id="events" className="py-20 px-4">
+    <section id="events" className="pt-20 pb-8 px-4">
       <div className="container mx-auto text-center">
         <h2 className="font-heading text-5xl md:text-6xl font-bold text-white uppercase tracking-wider mb-12">
           Our Events

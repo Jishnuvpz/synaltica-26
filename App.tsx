@@ -26,6 +26,19 @@ const App: React.FC = () => {
     setSelectedEvent(null);
   };
 
+  const handleHomeClick = () => {
+    setSelectedEvent(null);
+    setIsContactOpen(false);
+    setIsAboutOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleEventsClick = () => {
+    setSelectedEvent(null);
+    setIsContactOpen(false);
+    setIsAboutOpen(false);
+  };
+
   return (
     <div className="relative min-h-screen font-body low-poly-bg overflow-x-hidden">
       <div className="relative">
@@ -42,6 +55,8 @@ const App: React.FC = () => {
         onClose={() => setIsNavOpen(false)}
         onContactClick={() => setIsContactOpen(true)}
         onAboutClick={() => setIsAboutOpen(true)}
+        onHomeClick={handleHomeClick}
+        onEventsClick={handleEventsClick}
       />
       {selectedEvent && (
         <EventDetail event={selectedEvent} onClose={handleCloseDetail} />

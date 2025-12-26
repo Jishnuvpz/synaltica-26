@@ -17,7 +17,6 @@ export interface Event {
   name: string;
   tagline: string;
   teamSize: string;
-  prizePool: string;
   overview: string;
   rounds: Round[];
   convenors: Convenor[];

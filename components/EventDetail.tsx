@@ -11,7 +11,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [openRound, setOpenRound] = useState<number | null>(0);
   
-  const tabs = ['Overview', 'Rules'];
+  const tabs = ['Overview', 'Rules', 'Team Size'];
 
   const handleToggleRound = (index: number) => {
     setOpenRound(openRound === index ? null : index);
@@ -80,6 +80,15 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
                     )}
                   </div>
                 ))}
+              </div>
+            )}
+            
+            {activeTab === 'Team Size' && (
+              <div className="animate-[fadeInUp_0.5s_ease-out]">
+                <div className="animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
+                  <h3 className="font-heading text-2xl text-brand-amber-dark mb-2">Team Size</h3>
+                  <p className="text-2xl font-bold text-white">{event.teamSize}</p>
+                </div>
               </div>
             )}
           </div>

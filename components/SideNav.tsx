@@ -6,13 +6,36 @@ interface SideNavProps {
   onClose: () => void;
   onContactClick: () => void;
   onAboutClick: () => void;
+  onHomeClick: () => void;
+  onEventsClick: () => void;
 }
 
-const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose, onContactClick, onAboutClick }) => {
-  const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Events', href: '#events' },
-  ];
+const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose, onContactClick, onAboutClick, onHomeClick, onEventsClick }) => {
+  const handleHomeClick = () => {
+    onHomeClick();
+    onClose();
+  };
+
+  const handleEventsClick = () => {
+    onEventsClick();
+    onClose();
+    setTimeout(() => {
+      // Prevent URL hash change
+      history.pushState(null, '', window.location.pathname);
+      const eventsSection = document.getElementById('events');
+      if (eventsSection) {
+        // Scroll with offset to show some context above
+        const headerOffset = 100;
+        const elementPosition = eventsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
 
   const handleContactClick = () => {
     onContactClick();
@@ -52,18 +75,23 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose, onContactClick, onAb
         </div>
         
         <ul className="space-y-6">
-          {navLinks.map((link, index) => (
-            <li key={link.name} className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
-              <a 
-                href={link.href} 
-                onClick={onClose} 
-                className="font-heading text-xl text-white/80 hover:text-brand-amber transition-colors duration-200 block"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: `${0.3 + navLinks.length * 0.1}s` }}>
+          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: '0.3s' }}>
+            <button 
+              onClick={handleHomeClick} 
+              className="font-heading text-xl text-white/80 hover:text-brand-amber transition-colors duration-200 block text-left w-full"
+            >
+              Home
+            </button>
+          </li>
+          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: '0.4s' }}>
+            <button 
+              onClick={handleEventsClick} 
+              className="font-heading text-xl text-white/80 hover:text-brand-amber transition-colors duration-200 block text-left w-full"
+            >
+              Events
+            </button>
+          </li>
+          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: '0.5s' }}>
             <button 
               onClick={handleAboutClick} 
               className="font-heading text-xl text-white/80 hover:text-brand-amber transition-colors duration-200 block text-left w-full"
@@ -71,7 +99,7 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose, onContactClick, onAb
               About
             </button>
           </li>
-          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: `${0.3 + (navLinks.length + 1) * 0.1}s` }}>
+          <li className="animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: '0.6s' }}>
             <button 
               onClick={handleContactClick} 
               className="font-heading text-xl text-white/80 hover:text-brand-amber transition-colors duration-200 block text-left w-full"

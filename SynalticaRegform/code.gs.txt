@@ -143,12 +143,12 @@ function validateForm(form) {
 
 function isDuplicateRegistration(sheet, email, event) {
   try {
-    const data = sheet.getDataRange().getValues();
-    const emailColumn = 1; // Column B (0-indexed)
-    const eventColumn = 2; // Column C (0-indexed)
+    var data = sheet.getDataRange().getValues();
+    var emailColumn = 1; // Column B (0-indexed)
+    var eventColumn = 2; // Column C (0-indexed)
     
     // Skip header row, check if email+event combination exists
-    for (let i = 1; i < data.length; i++) {
+    for (var i = 1; i < data.length; i++) {
       if (data[i][emailColumn].toString().toLowerCase() === email.trim().toLowerCase() &&
           data[i][eventColumn].toString() === event) {
         return true;
@@ -162,93 +162,69 @@ function isDuplicateRegistration(sheet, email, event) {
 }
 
 function sendConfirmationEmail(form) {
-  const subject = "✅ SYNALTICA '26 - Registration Confirmation";
+  var subject = "✅ SYNALTICA '26 - Registration Confirmation";
   
-  const htmlBody = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #5E3BEE, #4A2EB3); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-        .header h1 { margin: 0; font-size: 28px; }
-        .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
-        .info-box { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #5E3BEE; }
-        .info-row { padding: 10px 0; border-bottom: 1px solid #eee; }
-        .info-row:last-child { border-bottom: none; }
-        .label { font-weight: 600; color: #5E3BEE; display: inline-block; width: 150px; }
-        .value { color: #333; }
-        .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #eee; color: #666; font-size: 14px; }
-        .success-icon { font-size: 48px; text-align: center; margin: 20px 0; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h1>🏆 SYNALTICA '26</h1>
-          <p style="margin: 10px 0 0 0; font-size: 16px;">Registration Confirmed!</p>
-        </div>
-        <div class="content">
-          <div class="success-icon">✅</div>
-          <p><strong>Dear ${form.leaderName},</strong></p>
-          <p>Thank you for registering for <strong>SYNALTICA '26</strong>! We're excited to have your team participate.</p>
-          
-          <div class="info-box">
-            <h3 style="margin-top: 0; color: #5E3BEE;">📋 Registration Details</h3>
-            <div class="info-row">
-              <span class="label">Event:</span>
-              <span class="value">${form.event}</span>
-            </div>
-            <div class="info-row">
-              <span class="label">Team Name:</span>
-              <span class="value">${form.teamName}</span>
-            </div>
-            <div class="info-row">
-              <span class="label">Team Leader:</span>
-              <span class="value">${form.leaderName}</span>
-            </div>
-            <div class="info-row">
-              <span class="label">Team Members:</span>
-              <span class="value">${form.memberCount}</span>
-            </div>
-            ${form.member2Name ? `<div class="info-row"><span class="label">Member 2:</span><span class="value">${form.member2Name}</span></div>` : ''}
-            ${form.member3Name ? `<div class="info-row"><span class="label">Member 3:</span><span class="value">${form.member3Name}</span></div>` : ''}
-            <div class="info-row">
-              <span class="label">College:</span>
-              <span class="value">${form.collegeName}</span>
-            </div>
-            <div class="info-row">
-              <span class="label">Contact:</span>
-              <span class="value">${form.mobileNumber}</span>
-            </div>
-            <div class="info-row">
-              <span class="label">Email:</span>
-              <span class="value">${form.email}</span>
-            </div>
-          </div>
-          
-          <p><strong>⚡ What's Next?</strong></p>
-          <ul>
-            <li>Keep an eye on your email for event updates and guidelines</li>
-            <li>Prepare your team for an amazing competition</li>
-            <li>Join our event group for announcements (link will be shared soon)</li>
-          </ul>
-          
-          <p style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
-            <strong>⚠️ Important:</strong> Please save this email for your records. You may need to present this confirmation at the venue.
-          </p>
-          
-          <div class="footer">
-            <p><strong>Questions?</strong> Contact us at <a href="mailto:synaltica@example.com">synaltica@example.com</a></p>
-            <p>Best of luck with your preparations!</p>
-            <p style="margin-top: 20px; color: #999;">SYNALTICA '26 Team</p>
-          </div>
-        </div>
-      </div>
-    </body>
-    </html>
-  `;
+  var member2Row = form.member2Name ? '<div class="info-row"><span class="label">Member 2:</span><span class="value">' + form.member2Name + '</span></div>' : '';
+  var member3Row = form.member3Name ? '<div class="info-row"><span class="label">Member 3:</span><span class="value">' + form.member3Name + '</span></div>' : '';
+  
+  var htmlBody = '<!DOCTYPE html>' +
+    '<html>' +
+    '<head>' +
+      '<style>' +
+        'body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }' +
+        '.container { max-width: 600px; margin: 0 auto; padding: 20px; }' +
+        '.header { background: linear-gradient(135deg, #5E3BEE, #4A2EB3); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }' +
+        '.header h1 { margin: 0; font-size: 28px; }' +
+        '.content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }' +
+        '.info-box { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #5E3BEE; }' +
+        '.info-row { padding: 10px 0; border-bottom: 1px solid #eee; }' +
+        '.info-row:last-child { border-bottom: none; }' +
+        '.label { font-weight: 600; color: #5E3BEE; display: inline-block; width: 150px; }' +
+        '.value { color: #333; }' +
+        '.footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #eee; color: #666; font-size: 14px; }' +
+        '.success-icon { font-size: 48px; text-align: center; margin: 20px 0; }' +
+      '</style>' +
+    '</head>' +
+    '<body>' +
+      '<div class="container">' +
+        '<div class="header">' +
+          '<h1>🏆 SYNALTICA \'26</h1>' +
+          '<p style="margin: 10px 0 0 0; font-size: 16px;">Registration Confirmed!</p>' +
+        '</div>' +
+        '<div class="content">' +
+          '<div class="success-icon">✅</div>' +
+          '<p><strong>Dear ' + form.leaderName + ',</strong></p>' +
+          '<p>Thank you for registering for <strong>SYNALTICA \'26</strong>! We\'re excited to have your team participate.</p>' +
+          '<div class="info-box">' +
+            '<h3 style="margin-top: 0; color: #5E3BEE;">📋 Registration Details</h3>' +
+            '<div class="info-row"><span class="label">Event:</span><span class="value">' + form.event + '</span></div>' +
+            '<div class="info-row"><span class="label">Team Name:</span><span class="value">' + form.teamName + '</span></div>' +
+            '<div class="info-row"><span class="label">Team Leader:</span><span class="value">' + form.leaderName + '</span></div>' +
+            '<div class="info-row"><span class="label">Team Members:</span><span class="value">' + form.memberCount + '</span></div>' +
+            member2Row +
+            member3Row +
+            '<div class="info-row"><span class="label">College:</span><span class="value">' + form.collegeName + '</span></div>' +
+            '<div class="info-row"><span class="label">Contact:</span><span class="value">' + form.mobileNumber + '</span></div>' +
+            '<div class="info-row"><span class="label">Email:</span><span class="value">' + form.email + '</span></div>' +
+          '</div>' +
+          '<p><strong>⚡ What\'s Next?</strong></p>' +
+          '<ul>' +
+            '<li>Keep an eye on your email for event updates and guidelines</li>' +
+            '<li>Prepare your team for an amazing competition</li>' +
+            '<li>Join our event group for announcements (link will be shared soon)</li>' +
+          '</ul>' +
+          '<p style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">' +
+            '<strong>⚠️ Important:</strong> Please save this email for your records. You may need to present this confirmation at the venue.' +
+          '</p>' +
+          '<div class="footer">' +
+            '<p><strong>Questions?</strong> Contact us at <a href="mailto:24127065@srcas.ac.in">24127065@srcas.ac.in</a></p>' +
+            '<p>Best of luck with your preparations!</p>' +
+            '<p style="margin-top: 20px; color: #999;">SYNALTICA \'26 Team</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</body>' +
+    '</html>';
   
   MailApp.sendEmail({
     to: form.email,
@@ -260,20 +236,16 @@ function sendConfirmationEmail(form) {
 function sendAdminNotification(form) {
   if (!CONFIG.ADMIN_EMAIL) return;
   
-  const subject = "🔔 New SYNALTICA '26 Registration - " + form.event;
-  const body = `
-New registration received!
-
-Event: ${form.event}
-Team: ${form.teamName}
-Leader: ${form.leaderName}
-Members: ${form.memberCount}
-College: ${form.collegeName}
-Email: ${form.email}
-Mobile: ${form.mobileNumber}
-
-Registered at: ${new Date().toLocaleString()}
-  `;
+  var subject = "🔔 New SYNALTICA '26 Registration - " + form.event;
+  var body = 'New registration received!\n\n' +
+    'Event: ' + form.event + '\n' +
+    'Team: ' + form.teamName + '\n' +
+    'Leader: ' + form.leaderName + '\n' +
+    'Members: ' + form.memberCount + '\n' +
+    'College: ' + form.collegeName + '\n' +
+    'Email: ' + form.email + '\n' +
+    'Mobile: ' + form.mobileNumber + '\n\n' +
+    'Registered at: ' + new Date().toLocaleString();
   
   MailApp.sendEmail({
     to: CONFIG.ADMIN_EMAIL,
@@ -291,7 +263,7 @@ function getRegistrationStats() {
     
     // Count registrations by event
     const eventCounts = {};
-    for (let i = 1; i < data.length; i++) {
+    for (var i = 1; i < data.length; i++) {
       const event = data[i][2]; // Event column
       eventCounts[event] = (eventCounts[event] || 0) + 1;
     }
