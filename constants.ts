@@ -37,7 +37,7 @@ export const EVENTS: Event[] = [
         id: 'prompt-engineering',
         name: 'Prompt Engineering',
         tagline: 'Craft the Prompt. Command the Machine.',
-        teamSize: '1–2',
+        teamSize: '1–3',  
         Icon: PromptIcon,
         overview: 'A competitive showdown where creativity meets precision. Participants will engineer prompts that push AI models to their limits—generating optimized, structured, and high-quality outputs. This event evaluates how well you can think like the model, manipulate its behavior, and produce exceptional results under constraints.',
         rounds: [
@@ -78,7 +78,7 @@ export const EVENTS: Event[] = [
         id: 'data-visualization',
         name: 'Data Visualization',
         tagline: 'See the Data. Shape the Story.',
-        teamSize: '1–3',
+        teamSize: '1–2',
         Icon: DataVizIcon,
         overview: 'Participants transform raw datasets into compelling visual narratives. This event tests analytical thinking, aesthetic design, and storytelling skills using visualization tools. It\'s not about charts alone—it’s about insight and clarity.',
         rounds: [
@@ -145,7 +145,7 @@ export const EVENTS: Event[] = [
         id: 'idea-pitching',
         name: 'Idea Pitching',
         tagline: 'Present. Persuade. Inspire.',
-        teamSize: '2–4',
+        teamSize: '1–2',
         Icon: IdeaPitchingIcon,
         overview: 'Bring your innovation to life! Participants will pitch ideas addressing real-world problems, demonstrating feasibility, market impact, technical depth, and originality. It’s a battle of clarity, conviction, and creativity.',
         rounds: [
@@ -186,7 +186,7 @@ export const EVENTS: Event[] = [
         id: 'quiz-arena',
         name: 'Quiz Arena',
         tagline: 'Think Fast. Fire Faster.',
-        teamSize: '2–3',
+        teamSize: '1–2',
         Icon: QuizArenaIcon,
         overview: 'A thrilling tech + general knowledge quiz competition designed to test your recall power, analytical reasoning, and strategic play. Expect buzzer rounds, mind games, and rapid-fire challenges.',
         rounds: [
@@ -268,7 +268,7 @@ export const EVENTS: Event[] = [
         id: 'connections',
         name: 'Connections',
         tagline: 'Find the Link. Solve the Puzzle.',
-        teamSize: '3–4',
+        teamSize: '1–2',
         Icon: ConnectionsIcon,
         overview: 'A unique competition focused on pattern recognition, logical deduction, and creative problem-solving. Participants will tackle a series of interconnected puzzles, where insights from one stage unlock clues for the next. It’s a test of wit, observation, and the ability to see the bigger picture.',
         rounds: [

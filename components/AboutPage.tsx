@@ -15,36 +15,40 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
 
   const organizers = [
     {
-      name: 'YESWANTH RAJ',
+      name: 'YESWANTH RAJ S',
       role: 'Dept Chairman',
       year: '3rd Year CS&DA',
       description: 'Leading the organization with vision and dedication',
-      email: undefined
+      email: undefined,
+      image: '/ORGANIZERS/STUDENT_COORDINATORS/CHAIRMAN.jpeg'
     },
     {
-      name: 'VISHNU RAM',
+      name: 'VISHNU RAM S',
       role: 'Dept Secretary & Developer',
       year: '2nd Year CS&DA',
       description: 'Managing operations and technical development',
-      email: undefined
+      email: undefined,
+      image: '/ORGANIZERS/STUDENT_COORDINATORS/SECRETARY.jpeg'
     }
   ];
 
-  const staffCoordinator = {
-    name: 'Dr. A. SENTHIL KUMAR',
-    role: 'Staff Coordinator',
-    department: 'CS&DA Department',
-    description: 'Guiding and mentoring the entire event',
-    email: undefined
-  };
+  const staffCoordinators = [
+    { name: 'Dr.M.Praneesh', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Dr.A.Senthil Kumar', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Dr.Ginne M James', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Dr.Tintu George', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Dr.K.Rathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Ms.M.Aswathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+  ];
 
   const developer = {
     name: 'JISHNU .B',
     role: 'Developer',
-    year: 'CS&DA',
+    year: '2nd Year CS&DA',
     department: 'CS&DA Department',
     description: 'Crafting the digital experience',
-    email: undefined
+    email: undefined,
+    image: '/ORGANIZERS/STUDENT_COORDINATORS/DEVELOPER.jpeg'
   };
 
   const eventStats = [
@@ -193,6 +197,40 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
             {/* Organizers Tab */}
             {activeTab === 'organizers' && (
               <div className="space-y-6 animate-[fadeInUp_0.5s_ease-out]">
+                {/* Staff Coordinators */}
+                <div>
+                  <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Staff Coordinators</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {staffCoordinators.map((coordinator, idx) => (
+                      <div key={coordinator.name} className="relative group animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
+                        <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                        <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300">
+                          <div className="flex flex-col md:flex-row items-center gap-6">
+                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 flex-shrink-0">
+                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
+                                <span className="text-3xl font-bold text-brand-amber">{coordinator.name.charAt(0)}</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 text-center md:text-left">
+                              <h4 className="font-heading text-xl text-brand-amber mb-2">{coordinator.name}</h4>
+                              <p className="text-white/70 text-base mb-3">{coordinator.role}</p>
+                              <p className="text-white/80 leading-relaxed mb-4">{coordinator.description}</p>
+                              {coordinator.email && (
+                                <div className="flex items-center justify-center md:justify-start gap-2 text-brand-amber text-sm">
+                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                  </svg>
+                                  <span>{coordinator.email}</span>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Student Organizers */}
                 <div>
                   <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Student Organizers</h3>
@@ -207,8 +245,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                         <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full">
                           <div className="flex flex-col items-center text-center">
                             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
-                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                                <span className="text-3xl font-bold text-brand-amber">{organizer.name.charAt(0)}</span>
+                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                                <img 
+                                  src={organizer.image} 
+                                  alt={organizer.name}
+                                  className="w-full h-full object-cover"
+                                  style={{ objectPosition: 'center 20%' }}
+                                />
                               </div>
                             </div>
                             <h4 className="font-heading text-lg text-brand-amber mb-1">{organizer.name}</h4>
@@ -235,60 +278,42 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                   </div>
                 </div>
 
-                {/* Staff Coordinator */}
-                <div>
-                  <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Staff Coordinator</h3>
-                  <div className="relative group animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                    <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300">
-                      <div className="flex flex-col md:flex-row items-center gap-6">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 flex-shrink-0">
-                          <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                            <span className="text-4xl font-bold text-brand-amber">{staffCoordinator.name.charAt(0)}</span>
-                          </div>
-                        </div>
-                        <div className="flex-1 text-center md:text-left">
-                          <h4 className="font-heading text-2xl text-brand-amber mb-2">{staffCoordinator.name}</h4>
-                          <p className="text-white/70 text-base mb-3">{staffCoordinator.role}</p>
-                          <p className="text-white/80 leading-relaxed mb-4">{staffCoordinator.description}</p>
-                          {staffCoordinator.email && (
-                            <div className="flex items-center justify-center md:justify-start gap-2 text-brand-amber text-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                              </svg>
-                              <span>{staffCoordinator.email}</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Developer */}
                 <div>
                   <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Developer</h3>
-                  <div className="relative group animate-[fadeInUp_0.5s_ease-out_0.3s_both]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                    <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300">
-                      <div className="flex flex-col items-center text-center">
-                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
-                          <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                            <span className="text-3xl font-bold text-brand-amber">{developer.name.charAt(0)}</span>
+                  <div className="max-w-md mx-auto">
+                    <div className="relative group animate-[fadeInUp_0.5s_ease-out_0.3s_both]">
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                      <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300">
+                        <div className="flex flex-col items-center text-center">
+                          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
+                            <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                              <img 
+                                src={developer.image} 
+                                alt={developer.name}
+                                className="w-full h-full object-cover"
+                                style={{ objectPosition: 'center 20%' }}
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <h4 className="font-heading text-lg text-brand-amber mb-1">{developer.name}</h4>
-                        <p className="text-white/70 text-sm mb-2">{developer.role}</p>
-                        <p className="text-white/60 text-xs mb-3">{developer.department}</p>
-                        <p className="text-white/80 text-sm leading-relaxed">{developer.description}</p>
-                        {developer.email && (
-                          <div className="mt-4 flex items-center gap-2 text-brand-amber text-xs">
+                          <h4 className="font-heading text-lg text-brand-amber mb-1">{developer.name}</h4>
+                          <p className="text-white/70 text-sm mb-2">{developer.role}</p>
+                          <div className="flex items-center gap-2 text-white/60 text-xs mb-3">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
-                            <span>{developer.email}</span>
+                            <span>{developer.year}</span>
                           </div>
-                        )}
+                          <p className="text-white/80 text-sm leading-relaxed">{developer.description}</p>
+                          {developer.email && (
+                            <div className="mt-4 flex items-center gap-2 text-brand-amber text-xs">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              </svg>
+                              <span>{developer.email}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

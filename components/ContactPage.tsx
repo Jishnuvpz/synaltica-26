@@ -19,29 +19,32 @@ const ContactPage: React.FC<ContactProps> = ({ onClose }) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Staff Coordinator */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-              <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full flex flex-col">
-                <div className="text-center mb-4">
-                  <div className="inline-flex p-3 bg-brand-amber/20 rounded-lg mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
+            {/* Staff Coordinators */}
+            <div className="space-y-6">
+              {[
+                'Dr.M.Praneesh',
+                'Dr.A.Senthil Kumar',
+                'Dr.Ginne M James',
+                'Dr.Tintu George',
+                'Dr.K.Rathi',
+                'Ms.M.Aswathi',
+              ].map((name) => (
+                <div key={name} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                  <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full flex flex-col">
+                    <div className="text-center mb-4">
+                      <div className="inline-flex p-3 bg-brand-amber/20 rounded-lg mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <p className="text-brand-amber text-xs font-semibold uppercase tracking-wide mb-2">Staff Coordinator</p>
+                      <h3 className="text-white text-xl font-bold mb-1">{name}</h3>
+                      <p className="text-brand-amber-dark text-sm mb-3">Faculty</p>
+                    </div>
                   </div>
-                  <p className="text-brand-amber text-xs font-semibold uppercase tracking-wide mb-2">Staff Coordinator</p>
-                  <h3 className="text-white text-xl font-bold mb-1">Dr. A. Senthil Kumar</h3>
-                  <p className="text-brand-amber-dark text-sm mb-3">Faculty</p>
                 </div>
-                <div className="mt-auto text-center">
-                  <a href="tel:+919944557659" className="inline-flex items-center gap-2 text-white/80 hover:text-brand-amber transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span className="font-mono text-base">+91 9944557659</span>
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Student Coordinator 1 */}
