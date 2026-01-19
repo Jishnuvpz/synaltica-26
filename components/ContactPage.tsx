@@ -6,19 +6,19 @@ interface ContactProps {
 
 const ContactPage: React.FC<ContactProps> = ({ onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/95 backdrop-blur-md overflow-y-auto py-8 px-4 animate-[fadeIn_0.3s_ease-out]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/95 backdrop-blur-md overflow-y-auto py-4 sm:py-6 md:py-8 px-3 sm:px-4 animate-[fadeIn_0.3s_ease-out]">
       <div className="relative w-full max-w-6xl my-auto animate-[fadeInUp_0.5s_ease-out]">
-        <div className="glassmorphism rounded-2xl p-8 md:p-12 border border-brand-amber/30 shadow-[0_0_40px_rgba(245,194,107,0.15)]">
+        <div className="glassmorphism rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border border-brand-amber/30 shadow-[0_0_40px_rgba(245,194,107,0.15)]">
           {/* Header Section */}
-          <div className="text-center mb-12 animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
-            <h2 className="font-heading text-5xl md:text-6xl font-black text-white uppercase tracking-wider mb-3 animate-glow">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12 animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide md:tracking-wider mb-3 animate-glow">
               Contact Us
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mx-auto mb-4"></div>
-            <p className="text-brand-amber/80 text-lg">We're here to help with any Questions about SYNALTICA '26</p>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mx-auto mb-3 sm:mb-4"></div>
+            <p className="text-brand-amber/80 text-sm sm:text-base md:text-lg px-2">We're here to help with any Questions about SYNALTICA '26</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {/* Staff Coordinators */}
             <div className="space-y-6">
               {[

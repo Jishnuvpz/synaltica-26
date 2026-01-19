@@ -58,36 +58,36 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/95 backdrop-blur-md overflow-y-auto py-8 px-4 animate-[fadeIn_0.3s_ease-out]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/95 backdrop-blur-md overflow-y-auto py-4 sm:py-6 md:py-8 px-3 sm:px-4 animate-[fadeIn_0.3s_ease-out]">
       <div className="relative w-full max-w-6xl my-auto animate-[fadeInUp_0.5s_ease-out]">
-        <div className="glassmorphism rounded-2xl p-6 md:p-10 border border-brand-amber/30 shadow-[0_0_40px_rgba(245,194,107,0.15)]">
+        <div className="glassmorphism rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-brand-amber/30 shadow-[0_0_40px_rgba(245,194,107,0.15)]">
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white/70 hover:text-white transition-colors z-10 p-2"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
 
           {/* Header Section */}
-          <div className="text-center mb-8 animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide lg:tracking-wider mb-3 animate-glow">
+          <div className="text-center mb-6 sm:mb-8 animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide lg:tracking-wider mb-2 sm:mb-3 animate-glow">
               About SYNALTICA '26
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mx-auto mb-4"></div>
-            <p className="text-brand-amber-dark text-sm md:text-base uppercase tracking-widest">Where Innovation Meets Excellence</p>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mx-auto mb-3 sm:mb-4"></div>
+            <p className="text-brand-amber-dark text-xs sm:text-sm md:text-base uppercase tracking-widest">Where Innovation Meets Excellence</p>
           </div>
 
           {/* Tab Navigation */}
-          <div className="flex justify-center mb-8 animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
-            <div className="inline-flex glassmorphism rounded-xl p-1 border border-brand-amber/20">
+          <div className="flex justify-center mb-6 sm:mb-8 animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
+            <div className="inline-flex glassmorphism rounded-lg sm:rounded-xl p-0.5 sm:p-1 border border-brand-amber/20 w-full sm:w-auto overflow-x-auto">
               {tabs.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 rounded-lg font-heading text-sm md:text-base transition-all duration-300 animate-[fadeInUp_0.5s_ease-out_both] ${
+                  className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-md sm:rounded-lg font-heading text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap animate-[fadeInUp_0.5s_ease-out_both] ${
                     activeTab === tab.id
                       ? 'bg-brand-amber text-brand-dark shadow-lg'
                       : 'text-white/70 hover:text-white hover:bg-white/5'

@@ -33,22 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
       </button>
       
       {/* Logos Row - Above Title */}
-      <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-20 mb-8 md:mb-12 lg:mb-16">
-        {/* Event Logo */}
-        <div className="group cursor-pointer">
-          <div className="relative">
-            <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
-              <img 
-                src="/assets/logos/eventlogo.png" 
-                alt="SYNALTICA Event Logo" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
-                onError={(e) => { e.currentTarget.style.display = 'none'; }} 
-              />
-            </div>
-          </div>
-        </div>
-
+      <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-16 mb-8 md:mb-12 lg:mb-16">
         {/* College Logo */}
         <div className="group cursor-pointer">
           <div className="relative">
