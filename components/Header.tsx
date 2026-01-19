@@ -38,11 +38,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
         <div className="group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105">
+            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
               <img 
                 src="/assets/logos/eventlogo.png" 
                 alt="SYNALTICA Event Logo" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
+                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
                 onError={(e) => { e.currentTarget.style.display = 'none'; }} 
               />
             </div>
@@ -53,11 +53,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
         <div className="group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105">
+            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
               <img 
                 src="/assets/logos/collegelogo.png" 
                 alt="Sri Ramakrishna College" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
+                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
                 onError={(e) => { e.currentTarget.style.display = 'none'; }} 
               />
             </div>
@@ -68,11 +68,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
         <div className="group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105">
+            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
               <img 
                 src="/assets/logos/departmentlogo.png" 
                 alt="Department of CS with Data Analytics" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
+                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
                 onError={(e) => { e.currentTarget.style.display = 'none'; }} 
               />
             </div>
