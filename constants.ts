@@ -1,13 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import { type Event } from './types';
 
 // Fix: Replaced all JSX with React.createElement calls to be compatible with a .ts file.
 const PromptIcon: React.FC<{ className?: string }> = ({ className }) => (
     React.createElement('svg', { className, xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor" }, React.createElement('path', { d: "M14 2H4c-1.11 0-2 .9-2 2v10h2V4h10V2zm4 4H8c-1.11 0-2 .9-2 2v10h2V8h10V6zm-4 4H10c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM12 18l2.5-3.33L16.5 18H12zm5.5-2.5L16 14l-1.5 2h3z" }))
-);
-
-const DataVizIcon: React.FC<{ className?: string }> = ({ className }) => (
-    React.createElement('svg', { className, xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor" }, React.createElement('path', { d: "M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z" }))
 );
 
 const VibeCodingIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -72,47 +68,6 @@ export const EVENTS: Event[] = [
         convenors: [
             { name: 'Alex Johnson', phone: '+91 98765 43210' },
             { name: 'Priya Singh', phone: '+91 87654 32109' },
-        ],
-    },
-    {
-        id: 'data-visualization',
-        name: 'Data Visualization',
-        tagline: 'See the Data. Shape the Story.',
-        teamSize: '1–2',
-        Icon: DataVizIcon,
-        overview: 'Participants transform raw datasets into compelling visual narratives. This event tests analytical thinking, aesthetic design, and storytelling skills using visualization tools. It\'s not about charts alone—it’s about insight and clarity.',
-        rounds: [
-            { 
-                title: 'Round 1 – Chart Crafting', 
-                description: 'Build clean and accurate visuals for a provided dataset.',
-                rules: [
-                    'Participants must use the provided dataset only.',
-                    'Visualization tools will be specified; no other tools are permitted.',
-                    'Clarity, accuracy, and aesthetic appeal will be evaluated.'
-                ],
-            },
-            { 
-                title: 'Round 2 – Insight Extraction', 
-                description: 'Given messy data, participants must preprocess, visualize, and infer meaningful patterns.',
-                rules: [
-                    'Data cleaning and preprocessing steps must be documented.',
-                    'Insights must be clearly annotated on the visualizations.',
-                    'Submissions must include a brief written summary of findings.'
-                ],
-            },
-            { 
-                title: 'Round 3 – Story Dashboard (Final)', 
-                description: 'Create a mini-dashboard combining storytelling + visuals to impress the jury.',
-                rules: [
-                    'The dashboard must be interactive.',
-                    'Storytelling and narrative flow are key judging criteria.',
-                    'All data sources used must be cited.'
-                ],
-            },
-        ],
-        convenors: [
-            { name: 'Ben Carter', phone: '+91 76543 21098' },
-            { name: 'Sara Khan', phone: '+91 65432 10987' },
         ],
     },
     {

@@ -199,31 +199,25 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
               <div className="space-y-6 animate-[fadeInUp_0.5s_ease-out]">
                 {/* Staff Coordinators */}
                 <div>
-                  <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Staff Coordinators</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Staff Coordinators</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
                     {staffCoordinators.map((coordinator, idx) => (
-                      <div key={coordinator.name} className="relative group animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
+                      <div 
+                        key={coordinator.name} 
+                        className="relative group animate-[fadeInUp_0.5s_ease-out_both]"
+                        style={{ animationDelay: `${idx * 0.05}s` }}
+                      >
                         <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                        <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300">
-                          <div className="flex flex-col md:flex-row items-center gap-6">
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 flex-shrink-0">
+                        <div className="relative glassmorphism rounded-xl p-5 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full">
+                          <div className="flex flex-col items-center text-center">
+                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-3 flex-shrink-0">
                               <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                                <span className="text-3xl font-bold text-brand-amber">{coordinator.name.charAt(0)}</span>
+                                <span className="text-xl font-bold text-brand-amber">{coordinator.name.split('.').pop()?.charAt(0) || coordinator.name.charAt(0)}</span>
                               </div>
                             </div>
-                            <div className="flex-1 text-center md:text-left">
-                              <h4 className="font-heading text-xl text-brand-amber mb-2">{coordinator.name}</h4>
-                              <p className="text-white/70 text-base mb-3">{coordinator.role}</p>
-                              <p className="text-white/80 leading-relaxed mb-4">{coordinator.description}</p>
-                              {coordinator.email && (
-                                <div className="flex items-center justify-center md:justify-start gap-2 text-brand-amber text-sm">
-                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                  </svg>
-                                  <span>{coordinator.email}</span>
-                                </div>
-                              )}
-                            </div>
+                            <h4 className="font-heading text-base text-brand-amber mb-1 leading-tight">{coordinator.name}</h4>
+                            <p className="text-white/60 text-xs mb-2">{coordinator.role}</p>
+                            <p className="text-white/70 text-xs leading-relaxed">{coordinator.department}</p>
                           </div>
                         </div>
                       </div>
@@ -233,8 +227,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
 
                 {/* Student Organizers */}
                 <div>
-                  <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Student Organizers</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Student Organizers</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                     {organizers.map((organizer, index) => (
                       <div 
                         key={organizer.name}
@@ -242,9 +236,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                        <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full">
+                        <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full">
                           <div className="flex flex-col items-center text-center">
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
+                            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
                               <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
                                 <img 
                                   src={organizer.image} 
@@ -280,13 +274,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
 
                 {/* Developer */}
                 <div>
-                  <h3 className="font-heading text-xl md:text-2xl text-brand-amber mb-4 text-center">Developer</h3>
-                  <div className="max-w-md mx-auto">
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Developer</h3>
+                  <div className="max-w-sm mx-auto">
                     <div className="relative group animate-[fadeInUp_0.5s_ease-out_0.3s_both]">
                       <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                      <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300">
+                      <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300">
                         <div className="flex flex-col items-center text-center">
-                          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
+                          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
                             <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
                               <img 
                                 src={developer.image} 

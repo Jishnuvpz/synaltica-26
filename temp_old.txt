@@ -1,0 +1,43 @@
+﻿
+        id: 'data-visualization',
+        name: 'Data Visualization',
+        tagline: 'See the Data. Shape the Story.',
+        teamSize: '1–2',
+        Icon: DataVizIcon,
+        overview: 'Participants transform raw datasets into compelling visual narratives. This event tests analytical thinking, aesthetic design, and storytelling skills using visualization tools. It\'s not about charts alone—it’s about insight and clarity.',
+        rounds: [
+            { 
+                title: 'Round 1 – Chart Crafting', 
+                description: 'Build clean and accurate visuals for a provided dataset.',
+                rules: [
+                    'Participants must use the provided dataset only.',
+                    'Visualization tools will be specified; no other tools are permitted.',
+                    'Clarity, accuracy, and aesthetic appeal will be evaluated.'
+                ],
+            },
+            { 
+                title: 'Round 2 – Insight Extraction', 
+                description: 'Given messy data, participants must preprocess, visualize, and infer meaningful patterns.',
+                rules: [
+                    'Data cleaning and preprocessing steps must be documented.',
+                    'Insights must be clearly annotated on the visualizations.',
+                    'Submissions must include a brief written summary of findings.'
+                ],
+            },
+            { 
+                title: 'Round 3 – Story Dashboard (Final)', 
+                description: 'Create a mini-dashboard combining storytelling + visuals to impress the jury.',
+                rules: [
+                    'The dashboard must be interactive.',
+                    'Storytelling and narrative flow are key judging criteria.',
+                    'All data sources used must be cited.'
+                ],
+            },
+        ],
+        convenors: [
+            { name: 'Ben Carter', phone: '+91 76543 21098' },
+            { name: 'Sara Khan', phone: '+91 65432 10987' },
+        ],
+    },
+    {
+        id:

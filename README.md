@@ -36,7 +36,14 @@ cd synaltica-26
 npm install
 ```
 
-3. Run development server:
+3. Set up environment variables:
+
+```bash
+cp .env.example .env
+# Edit .env and add your GEMINI_API_KEY
+```
+
+4. Run development server:
 
 ```bash
 npm run dev
@@ -52,24 +59,63 @@ npm run build
 
 This creates a `dist/` folder which you can deploy to any static host.
 
+To verify the build locally:
+
+```bash
+npm run preview
+```
+
+**Important:** Make sure to set `GEMINI_API_KEY` in your deployment platform's environment variables.
+
 ## ☁️ Deployment options
 
 Recommended providers:
 
-- Vercel — excellent for Vite sites, automatic builds from GitHub
-- Netlify — drag & drop `dist/` or connect repo for CI/CD
-- GitHub Pages — use the `gh-pages` package or GitHub Actions to publish `dist/`
+### Vercel (Recommended)
 
-Example: deploy with Vercel
+1. Push to GitHub
+2. Import project in Vercel dashboard
+3. Add `GEMINI_API_KEY` in Environment Variables
+4. Deploy
 
-1. Install vercel CLI (optional):
+### Netlify
+
+1. Build command: `npm run build`
+2. Publish directory: `dist`
+3. Add `GEMINI_API_KEY` in Environment Variables
+4. Deploy
+
+### GitHub Pages
+
+1. Install `gh-pages`:
 
 ```bash
-npm i -g vercel
-vercel
+npm install -D gh-pages
 ```
 
-2. Follow the interactive prompts and select the repository
+2. Add to package.json scripts:
+
+```json
+"deploy": "npm run build && gh-pages -d dist"
+```
+
+3. Add `homepage` field to package.json:
+
+```json
+"homepage": "https://yourusername.github.io/synaltica-26"
+```
+
+4. Deploy:
+
+```bash
+npm run deploy
+```
+
+**Note:** For GitHub Pages, environment variables should be added during build time or use a different approach for API keys.
+
+## 🔒 Security Note
+
+Never commit your `.env` file with actual API keys. The `.env.example` file is provided as a template. For production deployments, always use your hosting platform's environment variable configuration.
 
 ## ✅ Project status
 

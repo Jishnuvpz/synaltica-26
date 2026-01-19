@@ -15,7 +15,7 @@ const Events: React.FC<EventsProps> = ({ events, onSelectEvent }) => {
         <h2 className="font-heading text-5xl md:text-6xl font-bold text-white uppercase tracking-wider mb-12">
           Our Events
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {events.map((event, index) => (
             <div key={event.id} className="animate-[fadeInUp_0.6s_ease-out_both]" style={{ animationDelay: `${index * 0.1}s` }}>
               <EventCard event={event} onSelectEvent={onSelectEvent} />
