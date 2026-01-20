@@ -33,12 +33,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
   ];
 
   const staffCoordinators = [
-    { name: 'Dr.M.Praneesh', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
-    { name: 'Dr.A.Senthil Kumar', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
-    { name: 'Dr.Ginne M James', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
-    { name: 'Dr.Tintu George', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
-    { name: 'Dr.K.Rathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
-    { name: 'Ms.M.Aswathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
+    { name: 'Dr. A. Senthil Kumar', role: 'Faculty Advisor', department: 'CS&DA Department', description: 'Guiding and mentoring the entire event', email: undefined },
   ];
 
   const developer = {
@@ -52,7 +47,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
   };
 
   const eventStats = [
-    { label: 'Events', value: '7' },
+    { label: 'Events', value: '6' },
     { label: 'Expected Participants', value: '500+' },
     { label: 'Duration', value: '1 Day' }
   ];
@@ -87,11 +82,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-md sm:rounded-lg font-heading text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap animate-[fadeInUp_0.5s_ease-out_both] ${
-                    activeTab === tab.id
-                      ? 'bg-brand-amber text-brand-dark shadow-lg'
-                      : 'text-white/70 hover:text-white hover:bg-white/5'
-                  }`}
+                  className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-md sm:rounded-lg font-heading text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap animate-[fadeInUp_0.5s_ease-out_both] ${activeTab === tab.id
+                    ? 'bg-brand-amber text-brand-dark shadow-lg'
+                    : 'text-white/70 hover:text-white hover:bg-white/5'
+                    }`}
                   style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                 >
                   {tab.label}
@@ -110,8 +104,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                   <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/5 to-brand-burgundy/5 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                   <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/40 transition-all duration-300">
                     <p className="text-white/90 leading-relaxed text-base md:text-lg text-center">
-                      SYNALTICA '26 is a premier tech symposium where the boundaries of innovation are pushed and the future is forged. 
-                      Inspired by the fusion of ancient Greek wisdom and futuristic aesthetics, our event brings together the brightest 
+                      SYNALTICA '26 is a premier tech symposium where the boundaries of innovation are pushed and the future is forged.
+                      Inspired by the fusion of ancient Greek wisdom and futuristic aesthetics, our event brings together the brightest
                       minds in technology for a series of challenging competitions, insightful workshops, and unparalleled networking opportunities.
                     </p>
                   </div>
@@ -120,7 +114,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                 {/* Event Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {eventStats.map((stat, index) => (
-                    <div 
+                    <div
                       key={stat.label}
                       className="relative group animate-[fadeInUp_0.5s_ease-out_both]"
                       style={{ animationDelay: `${index * 0.1}s` }}
@@ -147,7 +141,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                         </div>
                         <h3 className="font-heading text-lg text-brand-amber mb-2">Competitions</h3>
                         <p className="text-white/70 text-sm">
-                          7 exciting technical challenges across AI, Coding, Design, and Analytics
+                          6 exciting technical challenges across AI, Coding, Design, and Analytics
                         </p>
                       </div>
                     </div>
@@ -186,7 +180,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                       </div>
                       <div>
                         <div className="text-brand-amber font-heading text-xs uppercase tracking-wide mb-2">Time</div>
-                        <div className="text-white text-lg font-semibold">9:00 AM - 5:00 PM</div>
+                        <div className="text-white text-lg font-semibold">9:00 AM - 1:00 PM</div>
                       </div>
                     </div>
                   </div>
@@ -199,25 +193,25 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
               <div className="space-y-6 animate-[fadeInUp_0.5s_ease-out]">
                 {/* Staff Coordinators */}
                 <div>
-                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Staff Coordinators</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Faculty Advisor</h3>
+                  <div className="max-w-sm mx-auto">
                     {staffCoordinators.map((coordinator, idx) => (
-                      <div 
-                        key={coordinator.name} 
+                      <div
+                        key={coordinator.name}
                         className="relative group animate-[fadeInUp_0.5s_ease-out_both]"
                         style={{ animationDelay: `${idx * 0.05}s` }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                        <div className="relative glassmorphism rounded-xl p-5 border border-brand-amber/20 hover:border-brand-amber/50 transition-all duration-300 h-full">
+                        <div className="relative glassmorphism rounded-xl p-6 border-2 border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full">
                           <div className="flex flex-col items-center text-center">
-                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-3 flex-shrink-0">
+                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-4 flex-shrink-0">
                               <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                                <span className="text-xl font-bold text-brand-amber">{coordinator.name.split('.').pop()?.charAt(0) || coordinator.name.charAt(0)}</span>
+                                <span className="text-2xl font-bold text-brand-amber">{coordinator.name.split('.').pop()?.charAt(0) || coordinator.name.charAt(0)}</span>
                               </div>
                             </div>
-                            <h4 className="font-heading text-base text-brand-amber mb-1 leading-tight">{coordinator.name}</h4>
-                            <p className="text-white/60 text-xs mb-2">{coordinator.role}</p>
-                            <p className="text-white/70 text-xs leading-relaxed">{coordinator.department}</p>
+                            <h4 className="font-heading text-xl text-brand-amber mb-2 leading-tight">{coordinator.name}</h4>
+                            <p className="text-white/70 text-sm mb-2">{coordinator.role}</p>
+                            <p className="text-white/60 text-sm leading-relaxed">{coordinator.department}</p>
                           </div>
                         </div>
                       </div>
@@ -230,7 +224,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                   <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Student Organizers</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                     {organizers.map((organizer, index) => (
-                      <div 
+                      <div
                         key={organizer.name}
                         className="relative group animate-[fadeInUp_0.5s_ease-out_both]"
                         style={{ animationDelay: `${index * 0.1}s` }}
@@ -240,8 +234,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                           <div className="flex flex-col items-center text-center">
                             <div className="w-28 h-28 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
                               <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
-                                <img 
-                                  src={organizer.image} 
+                                <img
+                                  src={organizer.image}
                                   alt={organizer.name}
                                   className="w-full h-full object-cover"
                                   style={{ objectPosition: 'center 20%' }}
@@ -282,8 +276,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                         <div className="flex flex-col items-center text-center">
                           <div className="w-28 h-28 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-1 mb-4">
                             <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
-                              <img 
-                                src={developer.image} 
+                              <img
+                                src={developer.image}
                                 alt={developer.name}
                                 className="w-full h-full object-cover"
                                 style={{ objectPosition: 'center 20%' }}
@@ -338,12 +332,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                   <div className="relative glassmorphism rounded-xl p-6 border border-brand-amber/20 hover:border-brand-amber/40 transition-all duration-300">
                     <div className="space-y-4 text-white/90 leading-relaxed">
                       <p className="text-base md:text-lg">
-                        The <span className="text-brand-amber font-semibold">Computer Science with Data Analytics</span> program at Sri Ramakrishna College of Arts and Science 
+                        The <span className="text-brand-amber font-semibold">Computer Science with Data Analytics</span> program at Sri Ramakrishna College of Arts and Science
                         is designed to equip students with cutting-edge skills in both computer science fundamentals and advanced data analytics techniques.
                       </p>
                       <p className="text-base md:text-lg">
-                        Our program is <span className="text-brand-amber font-semibold">integrated with TCS ION</span>, providing students with industry-recognized certifications 
-                        and real-world project experience. This partnership ensures that our graduates are not just academically prepared, but are 
+                        Our program is <span className="text-brand-amber font-semibold">integrated with TCS ION</span>, providing students with industry-recognized certifications
+                        and real-world project experience. This partnership ensures that our graduates are not just academically prepared, but are
                         industry-ready professionals with practical skills in data science, machine learning, and software development.
                       </p>
                     </div>
@@ -433,7 +427,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Go Back 
+              Go Back
             </button>
           </div>
         </div>
