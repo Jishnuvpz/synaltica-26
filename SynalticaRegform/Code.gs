@@ -30,7 +30,7 @@ function handleSubmit(form) {
         message: validationErrors.join(', ') 
       };
     }
-
+    
     const sheet = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID)
       .getSheetByName(CONFIG.SHEET_NAME);
     

@@ -33,12 +33,12 @@ export const EVENTS: Event[] = [
         id: 'prompt-engineering',
         name: 'Prompt Engineering',
         tagline: 'Craft the Prompt. Command the Machine.',
-        teamSize: '1–3',  
+        teamSize: '1–3',
         Icon: PromptIcon,
         overview: 'A competitive showdown where creativity meets precision. Participants will engineer prompts that push AI models to their limits—generating optimized, structured, and high-quality outputs. This event evaluates how well you can think like the model, manipulate its behavior, and produce exceptional results under constraints.',
         rounds: [
-            { 
-                title: 'Round 1 – Prompt Dexterity', 
+            {
+                title: 'Round 1 – Prompt Dexterity',
                 description: 'Generate high-quality answers for given tasks using minimal tokens. Accuracy and efficiency matter.',
                 rules: [
                     'Submissions will be judged on token efficiency and output accuracy.',
@@ -46,8 +46,8 @@ export const EVENTS: Event[] = [
                     'Each prompt must be crafted manually during the round.'
                 ],
             },
-            { 
-                title: 'Round 2 – Prompt Debugging', 
+            {
+                title: 'Round 2 – Prompt Debugging',
                 description: 'You’ll be given flawed or ambiguous prompts and must refine them to achieve perfect output.',
                 rules: [
                     'Participants must only modify the provided prompts.',
@@ -55,8 +55,8 @@ export const EVENTS: Event[] = [
                     'Explanation of changes must be submitted alongside the refined prompt.'
                 ],
             },
-            { 
-                title: 'Round 3 – Creative Command (Final)', 
+            {
+                title: 'Round 3 – Creative Command (Final)',
                 description: 'Solve an open-ended challenge through advanced prompt chaining, role assignment, and structured reasoning constraints.',
                 rules: [
                     'Use of advanced techniques like chain-of-thought and role-playing is encouraged.',
@@ -78,8 +78,8 @@ export const EVENTS: Event[] = [
         Icon: VibeCodingIcon,
         overview: 'Vibe Coding is a Coding Sprint where teams of 3 will create a functional web application with a Frontend, Backend, and Database using any modern tools. The problem statement will be given during the event. Goal: Build a simple, clear, and working Full Stack web application that solves the given problem efficiently.',
         rounds: [
-            { 
-                title: 'Full Stack Development Challenge', 
+            {
+                title: 'Full Stack Development Challenge',
                 description: 'Build a complete web application with Frontend, Backend, and Database based on the problem statement revealed at the event start.',
                 rules: [
                     'Team of 3 members only.',
@@ -104,31 +104,14 @@ export const EVENTS: Event[] = [
         Icon: IdeaPitchingIcon,
         overview: 'Bring your innovation to life! Participants will pitch ideas addressing real-world problems, demonstrating feasibility, market impact, technical depth, and originality. It’s a battle of clarity, conviction, and creativity.',
         rounds: [
-            { 
-                title: 'Round 1 – Abstract Submission', 
-                description: 'Submit a crisp one-page concept explaining the problem + solution.',
-                rules: [
-                    'Abstracts must not exceed 500 words.',
-                    'The idea must be original and not previously pitched in other major competitions.',
-                    'Submissions must be in PDF format.'
-                ],
-            },
-            { 
-                title: 'Round 2 – Elevator Pitch', 
-                description: 'A 90-second pitch evaluated on clarity, delivery, and viability.',
-                rules: [
-                    'Pitches are strictly timed to 90 seconds.',
-                    'No slides or props are allowed in this round.',
-                    'Judging is based on clarity, confidence, and idea potential.'
-                ],
-            },
-            { 
-                title: 'Round 3 – Full Pitch (Final)', 
+            {
+                title: 'Full Pitch',
                 description: '10-minute presentation + Q&A with panelists.',
                 rules: [
                     'Presentation time is 10 minutes, followed by a 5-minute Q&A.',
                     'Teams must be prepared to answer technical and business-related questions.',
-                    'A slide deck is mandatory for the final pitch.'
+                    'A slide deck is mandatory for the pitch.',
+                    'The idea must be original and not previously pitched in other major competitions.'
                 ],
             },
         ],
@@ -145,8 +128,8 @@ export const EVENTS: Event[] = [
         Icon: QuizArenaIcon,
         overview: 'A thrilling tech + general knowledge quiz competition designed to test your recall power, analytical reasoning, and strategic play. Expect buzzer rounds, mind games, and rapid-fire challenges.',
         rounds: [
-            { 
-                title: 'Round 1 – Written Screening', 
+            {
+                title: 'Round 1 – Written Screening',
                 description: 'Objective MCQs covering tech, logic, and GK.',
                 rules: [
                     'Use of any electronic devices or internet is strictly forbidden.',
@@ -154,8 +137,8 @@ export const EVENTS: Event[] = [
                     'Participants must complete the test within the given time.'
                 ],
             },
-            { 
-                title: 'Round 2 – Rapid Relay', 
+            {
+                title: 'Round 2 – Rapid Relay',
                 description: 'Team-based quick-response gameplay.',
                 rules: [
                     'Only one member can answer per question for the team.',
@@ -163,8 +146,8 @@ export const EVENTS: Event[] = [
                     'Discussions are allowed only before buzzing.'
                 ],
             },
-            { 
-                title: 'Round 3 – Buzzer Finals', 
+            {
+                title: 'Round 3 – Buzzer Finals',
                 description: 'High-pressure live quiz.',
                 rules: [
                     'The first team to press the buzzer gets to answer.',
@@ -186,8 +169,8 @@ export const EVENTS: Event[] = [
         Icon: LogoRushIcon,
         overview: 'A creative design challenge where participants craft logos based on surprise theme prompts. Show your design instincts, color theory mastery, and ability to create strong brand identity under strict time limits.',
         rounds: [
-            { 
-                title: 'Round 1 – Theme Logo', 
+            {
+                title: 'Round 1 – Theme Logo',
                 description: 'Design a logo based on a short brief.',
                 rules: [
                     'Designs must be original and created from scratch during the event.',
@@ -195,8 +178,8 @@ export const EVENTS: Event[] = [
                     'Submissions must be in vector format (SVG or AI).'
                 ],
             },
-            { 
-                title: 'Round 2 – Redesign Challenge', 
+            {
+                title: 'Round 2 – Redesign Challenge',
                 description: 'Redesign an existing poor-quality logo.',
                 rules: [
                     'The core concept of the original logo must be identifiable in the redesign.',
@@ -204,8 +187,8 @@ export const EVENTS: Event[] = [
                     'The redesigned logo must address the flaws of the original.'
                 ],
             },
-            { 
-                title: 'Round 3 – Brand Pack (Final)', 
+            {
+                title: 'Round 3 – Brand Pack (Final)',
                 description: 'Create logo + color palette + minimal brand guide.',
                 rules: [
                     'The brand guide must include logo usage guidelines, color codes, and typography choices.',
@@ -227,8 +210,8 @@ export const EVENTS: Event[] = [
         Icon: ConnectionsIcon,
         overview: 'A unique competition focused on pattern recognition, logical deduction, and creative problem-solving. Participants will tackle a series of interconnected puzzles, where insights from one stage unlock clues for the next. It’s a test of wit, observation, and the ability to see the bigger picture.',
         rounds: [
-            { 
-                title: 'Round 1 – Pattern Recognition', 
+            {
+                title: 'Round 1 – Pattern Recognition',
                 description: 'Identify hidden patterns and sequences in a series of visual and logical puzzles.',
                 rules: [
                     'Teams must work independently without external help.',
@@ -236,8 +219,8 @@ export const EVENTS: Event[] = [
                     'Answers must be submitted through the provided portal before the deadline.'
                 ],
             },
-            { 
-                title: 'Round 2 – Cross-Discipline Linking', 
+            {
+                title: 'Round 2 – Cross-Discipline Linking',
                 description: 'Connect concepts from seemingly unrelated fields to solve complex problems.',
                 rules: [
                     'Hints may be provided at the cost of points.',
@@ -245,8 +228,8 @@ export const EVENTS: Event[] = [
                     'Partial credit may be awarded for showing logical steps.'
                 ],
             },
-            { 
-                title: 'Round 3 – The Grand Connection', 
+            {
+                title: 'Round 3 – The Grand Connection',
                 description: 'A final, multi-layered puzzle where all previous clues and patterns come together to reveal the solution.',
                 rules: [
                     'Collaboration within the team is key.',

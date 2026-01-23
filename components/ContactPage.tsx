@@ -20,22 +20,27 @@ const ContactPage: React.FC<ContactProps> = ({ onClose }) => {
 
           {/* Main Contact Cards - Centered Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 max-w-4xl mx-auto">
-            {/* Staff Coordinator - Dr. Senthil Kumar */}
+            {/* Student Coordinator - Rudhresh Raj Babu */}
             <div className="relative group animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
               <div className="relative glassmorphism rounded-xl p-6 sm:p-8 border-2 border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full flex flex-col">
-                <div className="text-center">
+                <div className="text-center flex-1">
                   <div className="inline-flex p-4 bg-brand-amber/20 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </div>
-                  <p className="text-brand-amber text-xs font-semibold uppercase tracking-wide mb-2">Staff Coordinator</p>
-                  <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">Dr. A. Senthil Kumar</h3>
-                  <p className="text-brand-amber-dark text-sm mb-4">Faculty Advisor</p>
-                  <div className="pt-4 border-t border-brand-amber/20">
-                    <p className="text-white/60 text-xs">Department of CS & DA</p>
-                  </div>
+                  <p className="text-brand-amber text-xs font-semibold uppercase tracking-wide mb-2">Student Coordinator</p>
+                  <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">Rudhresh Raj Babu</h3>
+                  <p className="text-brand-amber-dark text-sm mb-4">Student Coordinator</p>
+                </div>
+                <div className="mt-auto pt-4 border-t border-brand-amber/20">
+                  <a href="tel:+919597243724" className="inline-flex items-center gap-2 text-white/80 hover:text-brand-amber transition-colors group/phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover/phone:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span className="font-mono text-sm sm:text-base">+91 9597243724</span>
+                  </a>
                 </div>
               </div>
             </div>
