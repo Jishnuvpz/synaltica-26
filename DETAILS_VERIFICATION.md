@@ -64,11 +64,11 @@ All details across the website have been verified and updated for consistency.
 - Department of CS & DA
 
 **Student Coordinators:**
-- **Yeswanth Raj S** - Department Chairman
+**Yeswanth Raj S** - Department Chairman (with photos)
   - Phone: +91 6380758380
   - Year: 3rd Year CS&DA
   
-- **Vishnu Ram S** - Secretary & Developer
+**Vishnu Ram S** - Secretary & Developer (with photo)
   - Phone: +91 9597757356
   - Year: 2nd Year CS&DA
 

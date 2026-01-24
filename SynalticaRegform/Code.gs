@@ -113,6 +113,18 @@ function handleSubmit(form) {
   }
 }
 
+// Event-specific team size limits
+const EVENT_MAX_MEMBERS = {
+  "Prompt Engineering": 2,
+  "Vibe Coding": 3,
+  "Data Visualization": 3,
+  "Idea Pitching": 2,
+  "Quiz": 2,
+  "Quiz Arena": 2,
+  "Connections": 2,
+  "Logo Rush": 2
+};
+
 // Form validation
 function validateForm(form) {
   const errors = [];
@@ -138,10 +150,14 @@ function validateForm(form) {
     errors.push('Leader name is required');
   }
   
-  // Member count validation
+  // Member count validation with event-specific limits
   const memberCount = parseInt(form.memberCount);
-  if (isNaN(memberCount) || memberCount < 1 || memberCount > 3) {
-    errors.push('Member count must be between 1 and 3');
+  const maxMembers = EVENT_MAX_MEMBERS[form.event] || 3;
+  
+  if (isNaN(memberCount) || memberCount < 1) {
+    errors.push('Member count must be at least 1');
+  } else if (memberCount > maxMembers) {
+    errors.push(`${form.event} allows a maximum of ${maxMembers} member${maxMembers > 1 ? 's' : ''}`);
   }
   
   // Additional member validation

@@ -10,7 +10,7 @@ interface EventDetailProps {
 const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [openRound, setOpenRound] = useState<number | null>(0);
-  
+
   const tabs = ['Overview', 'Rules', 'Team Size'];
 
   const handleToggleRound = (index: number) => {
@@ -48,9 +48,8 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`py-4 font-heading text-lg transition-colors duration-200 animate-[fadeInUp_0.5s_ease-out_both] ${
-                    activeTab === tab ? 'text-brand-amber border-b-2 border-brand-amber' : 'text-white/70 hover:text-white'
-                  }`}
+                  className={`py-4 font-heading text-lg transition-colors duration-200 animate-[fadeInUp_0.5s_ease-out_both] ${activeTab === tab ? 'text-brand-amber border-b-2 border-brand-amber' : 'text-white/70 hover:text-white'
+                    }`}
                   style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                 >
                   {tab}
@@ -58,10 +57,10 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
               ))}
             </div>
           </nav>
-          
+
           <div className="p-8 flex-grow">
             {activeTab === 'Overview' && <p className="text-white/90 leading-relaxed animate-[fadeInUp_0.5s_ease-out]">{event.overview}</p>}
-            
+
             {activeTab === 'Rules' && (
               <div className="space-y-3">
                 <h3 className="font-heading text-2xl text-brand-amber-dark mb-4 animate-[fadeInUp_0.5s_ease-out]">Event Rules</h3>
@@ -82,7 +81,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
                 ))}
               </div>
             )}
-            
+
             {activeTab === 'Team Size' && (
               <div className="animate-[fadeInUp_0.5s_ease-out]">
                 <div className="animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
@@ -95,10 +94,10 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
         </div>
 
         <footer className="flex-shrink-0 p-6 bg-brand-dark/50 border-t border-brand-purple/50 flex items-center justify-center animate-[fadeInUp_0.5s_ease-out_0.3s_both]">
-          <a 
-            href={REGISTRATION_URL} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={REGISTRATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-heading text-lg px-8 py-3 bg-brand-amber text-brand-dark rounded-lg transition-all duration-300 hover:bg-transparent hover:text-brand-amber border-2 border-brand-amber hover:shadow-[0_0_20px_theme(colors.brand.amber)]"
           >
             Register Now
