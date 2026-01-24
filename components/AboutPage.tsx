@@ -18,15 +18,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
     role: 'Convener',
     department: 'Head of Department, CS&DA',
     description: 'Leading and overseeing SYNALTICA \'26',
-    email: undefined
+    email: undefined,
+    image: '/ORGANIZERS/STAFF_COORDINATORS/DR_VIDHYA.jpeg'
   };
 
   const staffCoordinators = [
-    { name: 'Dr. M. Praneesh', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined },
-    { name: 'Dr. A. Senthil Kumar', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined },
-    { name: 'Dr. Ginne M James', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined },
-    { name: 'Dr. Tintu George', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined },
-    { name: 'Ms. K. Rathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined },
+    { name: 'Dr. M. Praneesh', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/DR_PRANEESH.jpeg' },
+    { name: 'Dr. A. Senthil Kumar', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/DR_SENTHIL_KUMAR.jpeg' },
+    { name: 'Dr. Ginne M James', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/DR_GINNE_M_JAMES.jpeg' },
+    { name: 'Dr. Tintu George', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/DR_TINTU_GEORGE.jpg' },
+    { name: 'Ms. K. Rathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/MS_K_RATHI.jpg' },
+    { name: 'Ms. M. Aswathi', role: 'Staff Coordinator', department: 'CS&DA Department', description: 'Coordinating and supporting the event', email: undefined, image: '/ORGANIZERS/STAFF_COORDINATORS/MS_M_ASWATHI.jpeg' },
   ];
 
   const organizers = [
@@ -220,8 +222,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                       <div className="relative glassmorphism rounded-xl p-6 border-2 border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full">
                         <div className="flex flex-col items-center text-center">
                           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-4 flex-shrink-0">
-                            <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                              <span className="text-2xl font-bold text-brand-amber">{convener.name.split('.').pop()?.charAt(0) || convener.name.charAt(0)}</span>
+                            <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                              {convener.image ? (
+                                <img
+                                  src={convener.image}
+                                  alt={convener.name}
+                                  className="w-full h-full object-cover"
+                                  style={{ objectPosition: 'center 20%' }}
+                                />
+                              ) : (
+                                <span className="text-2xl font-bold text-brand-amber">{convener.name.split('.').pop()?.charAt(0) || convener.name.charAt(0)}</span>
+                              )}
                             </div>
                           </div>
                           <h4 className="font-heading text-xl text-brand-amber mb-2 leading-tight">{convener.name}</h4>
@@ -248,8 +259,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                         <div className="relative glassmorphism rounded-xl p-5 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full">
                           <div className="flex flex-col items-center text-center">
                             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-3 flex-shrink-0">
-                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center">
-                                <span className="text-xl font-bold text-brand-amber">{coordinator.name.split('.').pop()?.charAt(0) || coordinator.name.charAt(0)}</span>
+                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                                {coordinator.image ? (
+                                  <img
+                                    src={coordinator.image}
+                                    alt={coordinator.name}
+                                    className="w-full h-full object-cover"
+                                    style={{ objectPosition: 'center 20%' }}
+                                  />
+                                ) : (
+                                  <span className="text-xl font-bold text-brand-amber">{coordinator.name.split('.').pop()?.charAt(0) || coordinator.name.charAt(0)}</span>
+                                )}
                               </div>
                             </div>
                             <h4 className="font-heading text-lg text-brand-amber mb-1 leading-tight">{coordinator.name}</h4>
@@ -456,6 +476,78 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
                     </div>
                   </div>
                 </div>
+
+                {/* Department Faculty */}
+                <div>
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-amber mb-6 text-center">Department Faculty</h3>
+
+                  {/* Head of Department */}
+                  <div className="mb-6">
+                    <h4 className="font-heading text-xl text-brand-amber/80 mb-4 text-center">Head of Department</h4>
+                    <div className="max-w-sm mx-auto">
+                      <div className="relative group animate-[fadeInUp_0.5s_ease-out_both]">
+                        <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                        <div className="relative glassmorphism rounded-xl p-6 border-2 border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300">
+                          <div className="flex flex-col items-center text-center">
+                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-4 flex-shrink-0">
+                              <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                                {convener.image ? (
+                                  <img
+                                    src={convener.image}
+                                    alt={convener.name}
+                                    className="w-full h-full object-cover"
+                                    style={{ objectPosition: 'center 20%' }}
+                                  />
+                                ) : (
+                                  <span className="text-2xl font-bold text-brand-amber">{convener.name.split('.').pop()?.charAt(0) || convener.name.charAt(0)}</span>
+                                )}
+                              </div>
+                            </div>
+                            <h4 className="font-heading text-xl text-brand-amber mb-2 leading-tight">{convener.name}</h4>
+                            <p className="text-white/70 text-sm mb-2">{convener.role}</p>
+                            <p className="text-white/60 text-xs">{convener.department}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Faculty Members */}
+                  <div>
+                    <h4 className="font-heading text-xl text-brand-amber/80 mb-4 text-center">Faculty Members</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {staffCoordinators.map((staff, idx) => (
+                        <div
+                          key={staff.name}
+                          className="relative group animate-[fadeInUp_0.5s_ease-out_both] w-full"
+                          style={{ animationDelay: `${idx * 0.05}s` }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                          <div className="relative glassmorphism rounded-xl p-5 border border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full">
+                            <div className="flex flex-col items-center text-center">
+                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-amber to-brand-burgundy p-0.5 mb-3 flex-shrink-0">
+                                <div className="w-full h-full rounded-full bg-brand-dark flex items-center justify-center overflow-hidden">
+                                  {staff.image ? (
+                                    <img
+                                      src={staff.image}
+                                      alt={staff.name}
+                                      className="w-full h-full object-cover"
+                                      style={{ objectPosition: 'center 20%' }}
+                                    />
+                                  ) : (
+                                    <span className="text-xl font-bold text-brand-amber">{staff.name.split('.').pop()?.charAt(0) || staff.name.charAt(0)}</span>
+                                  )}
+                                </div>
+                              </div>
+                              <h4 className="font-heading text-lg text-brand-amber mb-1 leading-tight">{staff.name}</h4>
+                              <p className="text-white/60 text-xs leading-relaxed">{staff.department}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -474,7 +566,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
