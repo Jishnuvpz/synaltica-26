@@ -4,7 +4,6 @@ import type React from 'react';
 export interface Round {
   title: string;
   description: string;
-  rules: string[];
 }
 
 export interface Convenor {

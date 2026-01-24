@@ -40,29 +40,14 @@ export const EVENTS: Event[] = [
             {
                 title: 'Round 1 – Prompt Dexterity',
                 description: 'Generate high-quality answers for given tasks using minimal tokens. Accuracy and efficiency matter.',
-                rules: [
-                    'Submissions will be judged on token efficiency and output accuracy.',
-                    'External tools or pre-written scripts are not allowed.',
-                    'Each prompt must be crafted manually during the round.'
-                ],
             },
             {
                 title: 'Round 2 – Prompt Debugging',
                 description: 'You’ll be given flawed or ambiguous prompts and must refine them to achieve perfect output.',
-                rules: [
-                    'Participants must only modify the provided prompts.',
-                    'The goal is to achieve the target output with minimal changes.',
-                    'Explanation of changes must be submitted alongside the refined prompt.'
-                ],
             },
             {
                 title: 'Round 3 – Creative Command (Final)',
                 description: 'Solve an open-ended challenge through advanced prompt chaining, role assignment, and structured reasoning constraints.',
-                rules: [
-                    'Use of advanced techniques like chain-of-thought and role-playing is encouraged.',
-                    'Final output must strictly follow the specified format.',
-                    'Plagiarism will result in immediate disqualification.'
-                ],
             },
         ],
         convenors: [
@@ -81,14 +66,6 @@ export const EVENTS: Event[] = [
             {
                 title: 'Full Stack Development Challenge',
                 description: 'Build a complete web application with Frontend, Backend, and Database based on the problem statement revealed at the event start.',
-                rules: [
-                    'Team of 3 members only.',
-                    'The problem statement will be given during the event.',
-                    'Build a Web App based on the problem statement given at the start.',
-                    'Participants are allowed to use any development tools or platforms (UIWizard, Framer, Lovable, Replit, VS Code, ChatGPT, Firebase, and others).',
-                    'The final judgment will be made by the judges according to the quality and outcome of the demo.',
-                    'Be respectful, keep the vibe positive — we\'re here to build, not stress 😄.'
-                ],
             },
         ],
         convenors: [
@@ -107,12 +84,6 @@ export const EVENTS: Event[] = [
             {
                 title: 'Full Pitch',
                 description: '10-minute presentation + Q&A with panelists.',
-                rules: [
-                    'Presentation time is 10 minutes, followed by a 5-minute Q&A.',
-                    'Teams must be prepared to answer technical and business-related questions.',
-                    'A slide deck is mandatory for the pitch.',
-                    'The idea must be original and not previously pitched in other major competitions.'
-                ],
             },
         ],
         convenors: [
@@ -131,29 +102,14 @@ export const EVENTS: Event[] = [
             {
                 title: 'Round 1 – Written Screening',
                 description: 'Objective MCQs covering tech, logic, and GK.',
-                rules: [
-                    'Use of any electronic devices or internet is strictly forbidden.',
-                    'Negative marking will be applied for incorrect answers.',
-                    'Participants must complete the test within the given time.'
-                ],
             },
             {
                 title: 'Round 2 – Rapid Relay',
                 description: 'Team-based quick-response gameplay.',
-                rules: [
-                    'Only one member can answer per question for the team.',
-                    'Points are awarded for speed and accuracy.',
-                    'Discussions are allowed only before buzzing.'
-                ],
             },
             {
                 title: 'Round 3 – Buzzer Finals',
                 description: 'High-pressure live quiz.',
-                rules: [
-                    'The first team to press the buzzer gets to answer.',
-                    'A wrong answer may lead to negative points or passing the question to the next team.',
-                    'The quizmaster\'s decision is final.'
-                ],
             },
         ],
         convenors: [
@@ -172,29 +128,14 @@ export const EVENTS: Event[] = [
             {
                 title: 'Round 1 – Theme Logo',
                 description: 'Design a logo based on a short brief.',
-                rules: [
-                    'Designs must be original and created from scratch during the event.',
-                    'Use of stock images or pre-made templates is prohibited.',
-                    'Submissions must be in vector format (SVG or AI).'
-                ],
             },
             {
                 title: 'Round 2 – Redesign Challenge',
                 description: 'Redesign an existing poor-quality logo.',
-                rules: [
-                    'The core concept of the original logo must be identifiable in the redesign.',
-                    'Participants must submit a short rationale for their design choices.',
-                    'The redesigned logo must address the flaws of the original.'
-                ],
             },
             {
                 title: 'Round 3 – Brand Pack (Final)',
                 description: 'Create logo + color palette + minimal brand guide.',
-                rules: [
-                    'The brand guide must include logo usage guidelines, color codes, and typography choices.',
-                    'The final package must be well-organized and professionally presented.',
-                    'All assets must be created by the participant.'
-                ],
             },
         ],
         convenors: [
@@ -213,29 +154,14 @@ export const EVENTS: Event[] = [
             {
                 title: 'Round 1 – Pattern Recognition',
                 description: 'Identify hidden patterns and sequences in a series of visual and logical puzzles.',
-                rules: [
-                    'Teams must work independently without external help.',
-                    'The use of the internet for research is strictly forbidden.',
-                    'Answers must be submitted through the provided portal before the deadline.'
-                ],
             },
             {
                 title: 'Round 2 – Cross-Discipline Linking',
                 description: 'Connect concepts from seemingly unrelated fields to solve complex problems.',
-                rules: [
-                    'Hints may be provided at the cost of points.',
-                    'Solutions require logical reasoning, not just guessing.',
-                    'Partial credit may be awarded for showing logical steps.'
-                ],
             },
             {
                 title: 'Round 3 – The Grand Connection',
                 description: 'A final, multi-layered puzzle where all previous clues and patterns come together to reveal the solution.',
-                rules: [
-                    'Collaboration within the team is key.',
-                    'The final solution must be presented with a clear explanation of the connections found.',
-                    'Any form of cheating will lead to immediate disqualification of the entire team.'
-                ],
             },
         ],
         convenors: [

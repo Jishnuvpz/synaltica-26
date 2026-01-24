@@ -11,7 +11,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
   const [activeTab, setActiveTab] = useState('Overview');
   const [openRound, setOpenRound] = useState<number | null>(0);
 
-  const tabs = ['Overview', 'Rules', 'Team Size'];
+  const tabs = ['Overview', 'Team Size'];
 
   const handleToggleRound = (index: number) => {
     setOpenRound(openRound === index ? null : index);
@@ -61,26 +61,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ event, onClose }) => {
           <div className="p-8 flex-grow">
             {activeTab === 'Overview' && <p className="text-white/90 leading-relaxed animate-[fadeInUp_0.5s_ease-out]">{event.overview}</p>}
 
-            {activeTab === 'Rules' && (
-              <div className="space-y-3">
-                <h3 className="font-heading text-2xl text-brand-amber-dark mb-4 animate-[fadeInUp_0.5s_ease-out]">Event Rules</h3>
-                {event.rounds.map((round, roundIndex) => (
-                  <div key={roundIndex} className="space-y-3 animate-[fadeInUp_0.5s_ease-out_both]" style={{ animationDelay: `${roundIndex * 0.1}s` }}>
-                    {event.rounds.length > 1 && (
-                      <h4 className="font-heading text-xl font-semibold text-brand-amber mb-2">{round.title}</h4>
-                    )}
-                    <ul className="list-disc list-inside space-y-2 text-white/80">
-                      {round.rules.map((rule, ruleIndex) => (
-                        <li key={ruleIndex} className="leading-relaxed">{rule}</li>
-                      ))}
-                    </ul>
-                    {event.rounds.length > 1 && roundIndex < event.rounds.length - 1 && (
-                      <div className="border-t border-brand-purple/30 my-4"></div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
+
 
             {activeTab === 'Team Size' && (
               <div className="animate-[fadeInUp_0.5s_ease-out]">
