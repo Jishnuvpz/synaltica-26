@@ -20,10 +20,10 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
   };
 
   return (
-    <header className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
+    <header className="relative min-h-screen md:h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4 py-16 md:py-0">
       {/* Fixed Hamburger Menu */}
-      <button 
-        onClick={onOpenNav} 
+      <button
+        onClick={onOpenNav}
         className="fixed top-4 right-4 md:top-8 md:right-8 z-30 p-2.5 rounded-lg backdrop-blur-sm bg-brand-dark/30 border border-brand-amber/30 text-brand-amber/70 hover:text-brand-amber hover:border-brand-amber/60 transition-all duration-300 hover:bg-brand-dark/50"
         aria-label="Open navigation menu"
       >
@@ -31,19 +31,19 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      
+
       {/* Logos Row - Above Title */}
-      <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-16 mb-8 md:mb-12 lg:mb-16">
+      <div className="flex items-center justify-center gap-6 md:gap-12 lg:gap-16 mb-6 md:mb-12 lg:mb-16">
         {/* College Logo */}
         <div className="group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
-              <img 
-                src="/assets/logos/collegelogo.png" 
-                alt="Sri Ramakrishna College" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
-                onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-2 md:p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
+              <img
+                src="/assets/logos/collegelogo.png"
+                alt="Sri Ramakrishna College"
+                className="h-[40px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
           </div>
@@ -53,12 +53,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
         <div className="group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-brand-amber/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
-              <img 
-                src="/assets/logos/departmentlogo.png" 
-                alt="Department of CS with Data Analytics" 
-                className="h-[50px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" 
-                onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+            <div className="relative bg-gradient-to-br from-brand-purple/30 to-brand-burgundy/30 backdrop-blur-md border-2 border-brand-amber/40 rounded-xl p-2 md:p-3 transition-all duration-300 group-hover:border-brand-amber/80 group-hover:scale-105 overflow-hidden">
+              <img
+                src="/assets/logos/departmentlogo.png"
+                alt="Department of CS with Data Analytics"
+                className="h-[40px] md:h-[60px] lg:h-[80px] w-auto max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
           </div>
@@ -68,20 +68,20 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
       {/* Main Content */}
       <div className="relative z-20 flex flex-col items-center w-full max-w-6xl">
         {/* Main Title */}
-        <div className="relative mb-4 md:mb-8">
+        <div className="relative mb-3 md:mb-8">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white uppercase tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider animate-glow max-w-full overflow-hidden text-ellipsis">
             SYNALTICA '26
           </h1>
         </div>
 
         {/* Decorative Line */}
-        <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mb-4 md:mb-8"></div>
+        <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-transparent via-brand-amber to-transparent mb-3 md:mb-8"></div>
 
         {/* Subtitle */}
         <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/80 font-light tracking-wide max-w-3xl leading-relaxed mb-2 md:mb-3 px-4">
           Presented by Department of Computer Science with Data Analytics
         </p>
-        
+
         {/* Date Badge */}
         <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-brand-amber/20 to-brand-burgundy/20 backdrop-blur-sm border border-brand-amber/40 rounded-full px-4 py-2 md:px-6 md:py-3 mb-6 md:mb-10">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,9 +91,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenNav }) => {
         </div>
 
         {/* CTA Button with Magnetic & Shimmer Effect */}
-        <a 
-          href={REGISTRATION_URL} 
-          target="_blank" 
+        <a
+          href={REGISTRATION_URL}
+          target="_blank"
           rel="noopener noreferrer"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
