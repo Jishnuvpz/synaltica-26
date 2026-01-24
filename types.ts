@@ -17,7 +17,9 @@ export interface Event {
   tagline: string;
   teamSize: string;
   overview: string;
-  rounds: Round[];
+  rules?: string[];
+  rounds?: Round[];
+  whatsappLink?: string;
   convenors: Convenor[];
   Icon: React.FC<{ className?: string }>;
 }

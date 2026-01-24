@@ -117,7 +117,6 @@ function handleSubmit(form) {
 const EVENT_MAX_MEMBERS = {
   "Prompt Engineering": 2,
   "Vibe Coding": 3,
-  "Data Visualization": 3,
   "Idea Pitching": 2,
   "Quiz": 2,
   "Quiz Arena": 2,

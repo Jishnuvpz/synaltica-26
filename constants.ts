@@ -33,23 +33,34 @@ export const EVENTS: Event[] = [
         id: 'prompt-engineering',
         name: 'Prompt Engineering',
         tagline: 'Craft the Prompt. Command the Machine.',
-        teamSize: '1–3',
+        teamSize: '1–2',
         Icon: PromptIcon,
-        overview: 'A competitive showdown where creativity meets precision. Participants will engineer prompts that push AI models to their limits—generating optimized, structured, and high-quality outputs. This event evaluates how well you can think like the model, manipulate its behavior, and produce exceptional results under constraints.',
+        overview: 'Prompt Engineering is a fun team event where participants create smart prompts to work with AI tools. Teams compete in three rounds that test clarity, logic, and creativity. The event helps students learn how to give better instructions to AI in a practical way.',
+        rules: [
+            'Each team must consist of 1 or 2 members only',
+            'Participants must use their own creativity while framing prompts',
+            'Internet access is allowed only for using approved AI tools',
+            'Any form of plagiarism or use of prompt generators will lead to immediate disqualification',
+            'Teams must complete each round within the given time limit',
+            'Judges\' decisions will be final',
+            'Teams failing to submit answers within the time limit will not be evaluated',
+            'Participants must bring their own devices (laptops) for the competition. No systems will be provided by the organizers'
+        ],
         rounds: [
             {
-                title: 'Round 1 – Prompt Dexterity',
-                description: 'Generate high-quality answers for given tasks using minimal tokens. Accuracy and efficiency matter.',
+                title: 'Round 1 – Debugging',
+                description: 'This round focuses on refining and improving prompts to make them clearer, more specific, and more effective. Participants must identify what is missing or unclear in a prompt and enhance it to get better AI responses. This round tests attention to detail and basic prompt-writing skills.'
             },
             {
-                title: 'Round 2 – Prompt Debugging',
-                description: 'You’ll be given flawed or ambiguous prompts and must refine them to achieve perfect output.',
+                title: 'Round 2 – Emoji Story Remix',
+                description: 'Teams are given creative visual cues and must convert them into meaningful AI outputs using well-structured prompts. This round encourages imagination, interpretation, and creative thinking while working with AI tools.'
             },
             {
-                title: 'Round 3 – Creative Command (Final)',
-                description: 'Solve an open-ended challenge through advanced prompt chaining, role assignment, and structured reasoning constraints.',
-            },
+                title: 'Round 3 – Reverse Prompt Guessing',
+                description: 'Teams are shown a final AI output and must frame a suitable prompt that could have generated it. This round emphasizes logical thinking, understanding of prompt structure, and how outputs relate to inputs.'
+            }
         ],
+        whatsappLink: 'https://chat.whatsapp.com/DCcS4aHftB4AWx51TJ5rHn',
         convenors: [
             { name: 'Alex Johnson', phone: '+91 98765 43210' },
             { name: 'Priya Singh', phone: '+91 87654 32109' },
@@ -59,14 +70,22 @@ export const EVENTS: Event[] = [
         id: 'vibe-coding',
         name: 'Vibe Coding',
         tagline: 'Code Fast. Code Smooth. Code with Vibes.',
-        teamSize: '3',
+        teamSize: '1–3',
         Icon: VibeCodingIcon,
-        overview: 'Vibe Coding is a Coding Sprint where teams of 3 will create a functional web application with a Frontend, Backend, and Database using any modern tools. The problem statement will be given during the event. Goal: Build a simple, clear, and working Full Stack web application that solves the given problem efficiently.',
+        overview: 'VIBE CODING is a creative and hands-on coding event where participants design, build, and present a functional web-based product using modern vibecoding tools. The event focuses on innovation, usability, and real-world functionality, giving developers a platform to turn ideas into interactive digital experiences.',
+        rules: [
+            'Team size: 1–3 members',
+            'Any vibecoding / web development tools are allowed',
+            'Internet access is permitted for development purposes',
+            'The project must be developed within the given time',
+            'Plagiarism or use of pre-built full projects is not allowed',
+            'Judges\' decision is final'
+        ],
         rounds: [
             {
-                title: 'Full Stack Development Challenge',
-                description: 'Build a complete web application with Frontend, Backend, and Database based on the problem statement revealed at the event start.',
-            },
+                title: 'Round 1 – Build & Present',
+                description: 'Web development challenge based on the given theme. Participants must design, develop, and demonstrate a working web product. Evaluation criteria: Functionality, User experience & design, Innovation, Code quality / tool usage, Overall presentation.'
+            }
         ],
         convenors: [
             { name: 'Chris Lee', phone: '+91 91234 56789' },
@@ -77,15 +96,23 @@ export const EVENTS: Event[] = [
         id: 'idea-pitching',
         name: 'Idea Pitching',
         tagline: 'Present. Persuade. Inspire.',
-        teamSize: '1–2',
+        teamSize: '2',
         Icon: IdeaPitchingIcon,
-        overview: 'Bring your innovation to life! Participants will pitch ideas addressing real-world problems, demonstrating feasibility, market impact, technical depth, and originality. It’s a battle of clarity, conviction, and creativity.',
+        overview: 'Pitch innovative ideas aligned with the UN Sustainable Development Goals (SDGs) to create real-world impact and sustainable solutions.',
+        rules: [
+            'Team registration: 2 persons per team',
+            'Idea should be participants own content',
+            'Presentation mode: PowerPoint presentation',
+            'Time allocation: 5 minutes for presentation & 2 minutes for Q&A',
+            'PPT template will be provided in WhatsApp group on 9th Feb'
+        ],
         rounds: [
             {
-                title: 'Full Pitch',
-                description: '10-minute presentation + Q&A with panelists.',
-            },
+                title: 'Round 1 – Pitch Presentation',
+                description: '5-minute PowerPoint presentation followed by 2-minute Q&A session with judges.'
+            }
         ],
+        whatsappLink: 'https://chat.whatsapp.com/H9Por1XaXe2LgiZgSTDZuj',
         convenors: [
             { name: 'Diana Ross', phone: '+91 71234 56789' },
             { name: 'Omar Ahmed', phone: '+91 61234 56789' },
@@ -93,50 +120,65 @@ export const EVENTS: Event[] = [
     },
     {
         id: 'quiz-arena',
-        name: 'Quiz Arena',
+        name: 'Mind Spark - Quiz',
         tagline: 'Think Fast. Fire Faster.',
-        teamSize: '1–2',
+        teamSize: '2',
         Icon: QuizArenaIcon,
         overview: 'A thrilling tech + general knowledge quiz competition designed to test your recall power, analytical reasoning, and strategic play. Expect buzzer rounds, mind games, and rapid-fire challenges.',
+        rules: [
+            'A team should consist of 2 members only',
+            'Minimum 25, maximum 30 teams',
+            'No use of mobile phones, books or internet during the quiz',
+            'College ID cards mandatory',
+            'The Judges decision is final in case of any disputes'
+        ],
         rounds: [
             {
-                title: 'Round 1 – Written Screening',
-                description: 'Objective MCQs covering tech, logic, and GK.',
+                title: 'Round 1 – Preliminary',
+                description: 'IQ questions in written format (25 questions). Shortlisted teams will be selected to the next round. Time allotted: 30 mins.'
             },
             {
-                title: 'Round 2 – Rapid Relay',
-                description: 'Team-based quick-response gameplay.',
+                title: 'Round 2 – Brain Battle',
+                description: 'Questions will be displayed to all. The team who raises hand first will be given priority. Each question will be given 20 seconds time to answer. Questions can be related to technical topics.'
             },
             {
-                title: 'Round 3 – Buzzer Finals',
-                description: 'High-pressure live quiz.',
-            },
+                title: 'Round 3 – Hot Seat',
+                description: 'Cups will be given to each team and to be arranged in pyramid shape (4-3-2-1). One person should arrange the cup and other person should answer the question. Questions include: Jumbled words, Crosswords, Linked word, Riddle word, True or false, Who am I, Connections.'
+            }
         ],
         convenors: [
-            { name: 'Frank White', phone: '+91 99887 76655' },
-            { name: 'Grace Liu', phone: '+91 88776 65544' },
+            { name: 'Samrutha S', phone: '+91 99887 76655' },
+            { name: 'Vishalini', phone: '+91 88776 65544' },
         ],
     },
     {
         id: 'logo-rush',
         name: 'Logo Rush',
         tagline: 'Design Bold. Impress Fast.',
-        teamSize: '1–2',
+        teamSize: '2',
         Icon: LogoRushIcon,
-        overview: 'A creative design challenge where participants craft logos based on surprise theme prompts. Show your design instincts, color theory mastery, and ability to create strong brand identity under strict time limits.',
+        overview: 'A creative design challenge where participants craft logos based on surprise theme prompts. Theme options include Sports, Food, IT Company, and Cars & Bikes. Show your design instincts, color theory mastery, and ability to create strong brand identity under strict time limits. Duration: 2 hours 30 minutes.',
+        rules: [
+            'All logos must be original (no stock images or templates)',
+            'Plagiarism leads to disqualification',
+            'Late submissions will not be accepted',
+            'Judges\' decision is final and binding',
+            'Misconduct or unfair means = disqualification',
+            'Organizers may modify rules if needed'
+        ],
         rounds: [
             {
-                title: 'Round 1 – Theme Logo',
-                description: 'Design a logo based on a short brief.',
+                title: 'Round 1 – Find the Logo (20 mins)',
+                description: 'Identify brand/company names from shown logos. Each correct answer earns points. No negative marking.'
             },
             {
-                title: 'Round 2 – Redesign Challenge',
-                description: 'Redesign an existing poor-quality logo.',
+                title: 'Round 2 – Choose the Correct Logo (20 mins)',
+                description: 'Given a brand name, choose the authentic logo from 4 options. Each correct answer earns points.'
             },
             {
-                title: 'Round 3 – Brand Pack (Final)',
-                description: 'Create logo + color palette + minimal brand guide.',
-            },
+                title: 'Round 3 – Design a Logo (30–45 mins)',
+                description: 'Theme announced at the start. Use Canva or similar tools to design. Logo must be original, aesthetic, and theme-based. Evaluation: Creativity & Originality (30%), Relevance to Theme (30%), Color & Design Sense (20%), Presentation & Uniqueness (20%).'
+            }
         ],
         convenors: [
             { name: 'Heidi Chen', phone: '+91 77665 54433' },
@@ -147,23 +189,30 @@ export const EVENTS: Event[] = [
         id: 'connections',
         name: 'Connections',
         tagline: 'Find the Link. Solve the Puzzle.',
-        teamSize: '1–2',
+        teamSize: '2',
         Icon: ConnectionsIcon,
-        overview: 'A unique competition focused on pattern recognition, logical deduction, and creative problem-solving. Participants will tackle a series of interconnected puzzles, where insights from one stage unlock clues for the next. It’s a test of wit, observation, and the ability to see the bigger picture.',
+        overview: 'CONNECTION is a fun and interactive quiz event that tests participants\' knowledge, logic, and word-linking skills through exciting rounds.',
+        rules: [
+            'Team size: 2 members',
+            'No mobile phones, smart watches, or calculators',
+            'Tie-breaker will be conducted if required',
+            'Judges\' decision is final'
+        ],
         rounds: [
             {
-                title: 'Round 1 – Pattern Recognition',
-                description: 'Identify hidden patterns and sequences in a series of visual and logical puzzles.',
+                title: 'Round 1 – Writing Round',
+                description: '40 questions | 1 mark each | Mixed themes (GK, Movies, Sports, Logic, Tech, Current Affairs, Fun)'
             },
             {
-                title: 'Round 2 – Cross-Discipline Linking',
-                description: 'Connect concepts from seemingly unrelated fields to solve complex problems.',
+                title: 'Round 2 – Find the Word',
+                description: 'Clue-based word guessing | 15 questions | 5 marks each'
             },
             {
-                title: 'Round 3 – The Grand Connection',
-                description: 'A final, multi-layered puzzle where all previous clues and patterns come together to reveal the solution.',
-            },
+                title: 'Round 3 – Think & Guess',
+                description: 'Personalities, Advertisement & Jumbled Words | 10 marks per question | 5 bonus marks for passed questions | 20 seconds per question'
+            }
         ],
+        whatsappLink: 'https://chat.whatsapp.com/Ew1c4du9pepANYeQEJfLEV',
         convenors: [
             { name: 'Jack Miller', phone: '+91 91919 19191' },
             { name: 'Kara Danvers', phone: '+91 81818 18181' },
