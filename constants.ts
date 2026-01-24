@@ -62,8 +62,7 @@ export const EVENTS: Event[] = [
         ],
         whatsappLink: 'https://chat.whatsapp.com/DCcS4aHftB4AWx51TJ5rHn',
         convenors: [
-            { name: 'Alex Johnson', phone: '+91 98765 43210' },
-            { name: 'Priya Singh', phone: '+91 87654 32109' },
+            { name: 'Kavin Raj', phone: '+91 99400 31267' },
         ],
     },
     {
@@ -72,6 +71,7 @@ export const EVENTS: Event[] = [
         tagline: 'Code Fast. Code Smooth. Code with Vibes.',
         teamSize: '1–3',
         Icon: VibeCodingIcon,
+        whatsappLink: 'https://chat.whatsapp.com/IR4w8gBORcwKjmYgR5GumZ?mode=gi_c',
         overview: 'VIBE CODING is a creative and hands-on coding event where participants design, build, and present a functional web-based product using modern vibecoding tools. The event focuses on innovation, usability, and real-world functionality, giving developers a platform to turn ideas into interactive digital experiences.',
         rules: [
             'Team size: 1–3 members',
@@ -88,8 +88,7 @@ export const EVENTS: Event[] = [
             }
         ],
         convenors: [
-            { name: 'Chris Lee', phone: '+91 91234 56789' },
-            { name: 'Maya Reddy', phone: '+91 81234 56789' },
+            { name: 'Jishnu', phone: '+91 89212 02318' },
         ],
     },
     {
@@ -114,8 +113,7 @@ export const EVENTS: Event[] = [
         ],
         whatsappLink: 'https://chat.whatsapp.com/H9Por1XaXe2LgiZgSTDZuj',
         convenors: [
-            { name: 'Diana Ross', phone: '+91 71234 56789' },
-            { name: 'Omar Ahmed', phone: '+91 61234 56789' },
+            { name: 'Darshan', phone: '+91 87549 01688' },
         ],
     },
     {
@@ -124,6 +122,7 @@ export const EVENTS: Event[] = [
         tagline: 'Think Fast. Fire Faster.',
         teamSize: '2',
         Icon: QuizArenaIcon,
+        whatsappLink: 'https://chat.whatsapp.com/BUO7T3zMhOeDrse8YRvl81?mode=gi_t',
         overview: 'A thrilling tech + general knowledge quiz competition designed to test your recall power, analytical reasoning, and strategic play. Expect buzzer rounds, mind games, and rapid-fire challenges.',
         rules: [
             'A team should consist of 2 members only',
@@ -147,8 +146,7 @@ export const EVENTS: Event[] = [
             }
         ],
         convenors: [
-            { name: 'Samrutha S', phone: '+91 99887 76655' },
-            { name: 'Vishalini', phone: '+91 88776 65544' },
+            { name: 'Darin', phone: '+91 90472 77787' },
         ],
     },
     {
@@ -157,6 +155,7 @@ export const EVENTS: Event[] = [
         tagline: 'Design Bold. Impress Fast.',
         teamSize: '2',
         Icon: LogoRushIcon,
+        whatsappLink: 'https://chat.whatsapp.com/JgLUCfkTILMGGHuGhF4u2h?mode=gi_t',
         overview: 'A creative design challenge where participants craft logos based on surprise theme prompts. Theme options include Sports, Food, IT Company, and Cars & Bikes. Show your design instincts, color theory mastery, and ability to create strong brand identity under strict time limits. Duration: 2 hours 30 minutes.',
         rules: [
             'All logos must be original (no stock images or templates)',
@@ -181,8 +180,7 @@ export const EVENTS: Event[] = [
             }
         ],
         convenors: [
-            { name: 'Heidi Chen', phone: '+91 77665 54433' },
-            { name: 'Ivan Petrov', phone: '+91 66554 43322' },
+            { name: 'Jayasakthi Balaji', phone: '+91 95007 70891' },
         ],
     },
     {
@@ -214,8 +212,7 @@ export const EVENTS: Event[] = [
         ],
         whatsappLink: 'https://chat.whatsapp.com/Ew1c4du9pepANYeQEJfLEV',
         convenors: [
-            { name: 'Jack Miller', phone: '+91 91919 19191' },
-            { name: 'Kara Danvers', phone: '+91 81818 18181' },
+            { name: 'Kaviyan', phone: '+91 87543 21530' },
         ],
     },
 ];
