@@ -515,7 +515,8 @@
         <div class="form-container">
             <div class="form-description">
                 <i class="fas fa-info-circle"></i>
-                <div><strong>Note:</strong> Choose your event and team size. Max members vary by event.</div>
+                <div><strong>Note:</strong> Choose your event and team size. Max members vary by event. Each team/member
+                    is allowed to participate in <strong>only one event</strong>.</div>
             </div>
 
             <div id="successMessage" class="success-message">
@@ -748,35 +749,36 @@
 
                 google.script.run
                     .withSuccessHandler(function (response) {
-                        if (response === "success") {
+                        if (response && response.status === 'success') {
                             successMessage.classList.add('show');
                             form.reset();
                             memberCountGroup.innerHTML = '';
                             updateMemberFields(1);
+                            successMessage.querySelector('div').textContent = response.message;
                             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
-                            alert("Error: " + response);
+                            // Handle explicit errors returned by the backend
+                            const msg = response && response.message ? response.message : JSON.stringify(response);
+                            alert("Error: " + msg);
                         }
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Registration';
                     })
                     .withFailureHandler(function (error) {
-                        alert("Submission failed: " + error.message);
+                        console.error("Submission failed", error);
+                        const errorMsg = error.message || (typeof error === 'object' ? JSON.stringify(error) : error);
+                        alert("Submission failed: " + errorMsg);
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Registration';
                     })
                     .handleSubmit(formData);
             });
 
-            // Mobile formatting
+            // Mobile formatting (Simple)
             const mobileInput = document.getElementById('mobileNumber');
             mobileInput.addEventListener('input', function () {
+                // Allow digits, spaces, plus, hyphens
                 this.value = this.value.replace(/[^0-9+\-\s]/g, '');
-            });
-            mobileInput.addEventListener('blur', function () {
-                let val = this.value.replace(/\D/g, '');
-                if (val.length >= 10) val = val.substring(0, 15);
-                this.value = val ? '+' + val : '';
             });
 
             // Init

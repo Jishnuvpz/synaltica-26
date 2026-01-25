@@ -75,10 +75,21 @@ const ContactPage: React.FC<ContactProps> = ({ onClose }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/10 to-brand-burgundy/10 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
               <div className="relative glassmorphism rounded-xl p-6 sm:p-8 border-2 border-brand-amber/30 hover:border-brand-amber/60 transition-all duration-300 h-full flex flex-col">
                 <div className="text-center flex-1">
-                  <div className="inline-flex p-4 bg-brand-amber/20 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
+                  <div className="mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-br from-brand-amber via-brand-amber/50 to-brand-burgundy/50">
+                      <div className="w-full h-full rounded-full overflow-hidden border-2 border-brand-dark bg-brand-dark/50">
+                        <img
+                          src="/ORGANIZERS/STUDENT_COORDINATORS/JOIN_SECRETARY.jpeg"
+                          alt="Rudhresh Raj Babu"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            e.currentTarget.parentElement?.parentElement?.classList.add('hidden');
+                            // Fallback to showing SVG if image fails (by removing hidden class from sibling or alternative logic - simplified here to just hide)
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
                   <p className="text-brand-amber text-xs font-semibold uppercase tracking-wide mb-2">Student Coordinator</p>
                   <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">Rudhresh Raj Babu</h3>

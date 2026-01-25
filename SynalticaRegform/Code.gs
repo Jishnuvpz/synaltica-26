@@ -85,13 +85,15 @@ function handleSubmit(form) {
     }
     
     // Send confirmation email
+    let emailStatus = 'sent';
     try {
       sendConfirmationEmail(form);
     } catch (emailError) {
       Logger.log('Email sending failed: ' + emailError);
+      emailStatus = 'failed';
     }
 
-    // Send admin notification
+    // Send admin notification (non-blocking)
     try {
       sendAdminNotification(form);
     } catch (adminError) {
@@ -100,7 +102,7 @@ function handleSubmit(form) {
 
     return { 
       status: 'success', 
-      message: `🎉 Registration successful! A confirmation email has been sent to ${form.email}` 
+      message: '🎉 Registration successful!' 
     };
 
   } catch (error) {
@@ -108,7 +110,7 @@ function handleSubmit(form) {
     Logger.log('Stack trace: ' + error.stack);
     return { 
       status: 'error', 
-      message: 'Registration failed due to a system error. Please try again or contact support.' 
+      message: 'Registration failed: ' + error.toString() 
     };
   }
 }
@@ -168,10 +170,10 @@ function validateForm(form) {
     errors.push('Member 3 name is required');
   }
   
-  // Mobile number validation (Indian format)
-  const mobileRegex = /^[6-9]\d{9}$/;
-  if (!form.mobileNumber || !mobileRegex.test(form.mobileNumber)) {
-    errors.push('Invalid mobile number (should be 10 digits starting with 6-9)');
+  // Mobile number validation (Basic)
+  const mobileStr = form.mobileNumber.toString().replace(/\D/g, ''); // Remove non-digits
+  if (!mobileStr || mobileStr.length < 10 || mobileStr.length > 15) {
+    errors.push('Invalid mobile number (should be 10-15 digits)');
   }
   
   // College name validation
@@ -323,7 +325,7 @@ function sendConfirmationEmail(form) {
     </html>
   `;
   
-  MailApp.sendEmail({
+  GmailApp.sendEmail({
     to: form.email,
     subject: subject,
     htmlBody: htmlBody

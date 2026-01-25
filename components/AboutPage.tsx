@@ -54,7 +54,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onClose }) => {
       year: '1st Year CS&DA',
       description: 'Coordinating event activities and logistics',
       email: undefined,
-      image: '/ORGANIZERS/STUDENT_COORDINATORS/COORDINATOR.jpeg'
+      image: '/ORGANIZERS/STUDENT_COORDINATORS/JOIN_SECRETARY.jpeg'
     }
   ];
 
